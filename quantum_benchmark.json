@@ -1,0 +1,3188 @@
+{
+  "metadata": {
+    "generation_date": "2025-05-17T18:21:15.026763",
+    "prime_limit": 1000000,
+    "framework_version": "0.2.0",
+    "samples_per_tier": 5
+  },
+  "tiers": [
+    {
+      "tier_info": {
+        "tier": 0,
+        "N": 2,
+        "K": [
+          1
+        ],
+        "description": "Basic factorization of small semiprimes",
+        "category": "elementary",
+        "capabilities": [
+          "basic_arithmetic",
+          "number_theory_concepts"
+        ]
+      },
+      "samples": [
+        {
+          "n": 10,
+          "factors": [
+            2,
+            5
+          ],
+          "signature": {
+            "1": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 4,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.5,
+            "gnfs_estimate": 3.795213852192475,
+            "combined_score": 6.0104076400856545
+          }
+        },
+        {
+          "n": 14,
+          "factors": [
+            2,
+            7
+          ],
+          "signature": {
+            "1": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 4,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 2.5,
+            "gnfs_estimate": 3.795213852192475,
+            "combined_score": 5.874425566780549
+          }
+        },
+        {
+          "n": 15,
+          "factors": [
+            3,
+            5
+          ],
+          "signature": {
+            "1": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 4,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.6666666666666666,
+            "gnfs_estimate": 3.795213852192475,
+            "combined_score": 6.394704803773995
+          }
+        },
+        {
+          "n": 15,
+          "factors": [
+            3,
+            5
+          ],
+          "signature": {
+            "1": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 4,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.6666666666666666,
+            "gnfs_estimate": 3.795213852192475,
+            "combined_score": 6.394704803773995
+          }
+        },
+        {
+          "n": 49,
+          "factors": [
+            7,
+            7
+          ],
+          "signature": {
+            "1": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 6,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.0,
+            "gnfs_estimate": 5.154851672518883,
+            "combined_score": 16.970562748477143
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 10,
+            "factors": [
+              2,
+              5
+            ],
+            "signature": {
+              "1": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 4,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.5,
+              "gnfs_estimate": 3.795213852192475,
+              "combined_score": 6.0104076400856545
+            }
+          },
+          "prompts": [
+            "Factor the number 10 into its prime factors.",
+            "Is 10 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(10) for K = [1].",
+            "Determine whether 10 belongs to S(2,[1])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 14,
+            "factors": [
+              2,
+              7
+            ],
+            "signature": {
+              "1": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 4,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 2.5,
+              "gnfs_estimate": 3.795213852192475,
+              "combined_score": 5.874425566780549
+            }
+          },
+          "prompts": [
+            "Factor the number 14 into its prime factors.",
+            "Is 14 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(14) for K = [1].",
+            "Determine whether 14 belongs to S(2,[1])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 15,
+            "factors": [
+              3,
+              5
+            ],
+            "signature": {
+              "1": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 4,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.6666666666666666,
+              "gnfs_estimate": 3.795213852192475,
+              "combined_score": 6.394704803773995
+            }
+          },
+          "prompts": [
+            "Factor the number 15 into its prime factors.",
+            "Is 15 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(15) for K = [1].",
+            "Determine whether 15 belongs to S(2,[1])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 15,
+            "factors": [
+              3,
+              5
+            ],
+            "signature": {
+              "1": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 4,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.6666666666666666,
+              "gnfs_estimate": 3.795213852192475,
+              "combined_score": 6.394704803773995
+            }
+          },
+          "prompts": [
+            "Factor the number 15 into its prime factors.",
+            "Is 15 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(15) for K = [1].",
+            "Determine whether 15 belongs to S(2,[1])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 49,
+            "factors": [
+              7,
+              7
+            ],
+            "signature": {
+              "1": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 6,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.0,
+              "gnfs_estimate": 5.154851672518883,
+              "combined_score": 16.970562748477143
+            }
+          },
+          "prompts": [
+            "Factor the number 49 into its prime factors.",
+            "Is 49 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(49) for K = [1].",
+            "Determine whether 49 belongs to S(2,[1])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 1,
+        "N": 2,
+        "K": [
+          1,
+          2
+        ],
+        "description": "Mixed small semiprimes",
+        "category": "elementary",
+        "capabilities": [
+          "basic_arithmetic",
+          "number_theory_concepts"
+        ]
+      },
+      "samples": [
+        {
+          "n": 13,
+          "factors": [
+            13
+          ],
+          "signature": {
+            "1": 0,
+            "2": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 4,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 3.795213852192475,
+            "combined_score": 4.363636363636363
+          }
+        },
+        {
+          "n": 10,
+          "factors": [
+            2,
+            5
+          ],
+          "signature": {
+            "1": 2,
+            "2": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 4,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.5,
+            "gnfs_estimate": 3.795213852192475,
+            "combined_score": 6.0104076400856545
+          }
+        },
+        {
+          "n": 3,
+          "factors": [
+            3
+          ],
+          "signature": {
+            "1": 1,
+            "2": 0
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 2,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 1.897606926096238,
+            "combined_score": 2.1818181818181817
+          }
+        },
+        {
+          "n": 15,
+          "factors": [
+            3,
+            5
+          ],
+          "signature": {
+            "1": 2,
+            "2": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 4,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.6666666666666666,
+            "gnfs_estimate": 3.795213852192475,
+            "combined_score": 6.394704803773995
+          }
+        },
+        {
+          "n": 3,
+          "factors": [
+            3
+          ],
+          "signature": {
+            "1": 1,
+            "2": 0
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 2,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 1.897606926096238,
+            "combined_score": 2.1818181818181817
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 13,
+            "factors": [
+              13
+            ],
+            "signature": {
+              "1": 0,
+              "2": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 4,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 3.795213852192475,
+              "combined_score": 4.363636363636363
+            }
+          },
+          "prompts": [
+            "Factor the number 13 into its prime factors.",
+            "Is 13 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(13) for K = [1, 2].",
+            "Determine whether 13 belongs to S(1,[1, 2])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 10,
+            "factors": [
+              2,
+              5
+            ],
+            "signature": {
+              "1": 2,
+              "2": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 4,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.5,
+              "gnfs_estimate": 3.795213852192475,
+              "combined_score": 6.0104076400856545
+            }
+          },
+          "prompts": [
+            "Factor the number 10 into its prime factors.",
+            "Is 10 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(10) for K = [1, 2].",
+            "Determine whether 10 belongs to S(2,[1, 2])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 3,
+            "factors": [
+              3
+            ],
+            "signature": {
+              "1": 1,
+              "2": 0
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 2,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 1.897606926096238,
+              "combined_score": 2.1818181818181817
+            }
+          },
+          "prompts": [
+            "Factor the number 3 into its prime factors.",
+            "Is 3 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(3) for K = [1, 2].",
+            "Determine whether 3 belongs to S(1,[1, 2])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 15,
+            "factors": [
+              3,
+              5
+            ],
+            "signature": {
+              "1": 2,
+              "2": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 4,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.6666666666666666,
+              "gnfs_estimate": 3.795213852192475,
+              "combined_score": 6.394704803773995
+            }
+          },
+          "prompts": [
+            "Factor the number 15 into its prime factors.",
+            "Is 15 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(15) for K = [1, 2].",
+            "Determine whether 15 belongs to S(2,[1, 2])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 3,
+            "factors": [
+              3
+            ],
+            "signature": {
+              "1": 1,
+              "2": 0
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 2,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 1.897606926096238,
+              "combined_score": 2.1818181818181817
+            }
+          },
+          "prompts": [
+            "Factor the number 3 into its prime factors.",
+            "Is 3 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(3) for K = [1, 2].",
+            "Determine whether 3 belongs to S(1,[1, 2])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 2,
+        "N": 3,
+        "K": [
+          2
+        ],
+        "description": "Multiple medium factors",
+        "category": "elementary",
+        "capabilities": [
+          "basic_arithmetic",
+          "number_theory_concepts"
+        ]
+      },
+      "samples": [
+        {
+          "n": 83,
+          "factors": [
+            83
+          ],
+          "signature": {
+            "2": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 7,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 5.733596852138027,
+            "combined_score": 7.636363636363636
+          }
+        },
+        {
+          "n": 89,
+          "factors": [
+            89
+          ],
+          "signature": {
+            "2": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 7,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 5.733596852138027,
+            "combined_score": 7.636363636363636
+          }
+        },
+        {
+          "n": 83,
+          "factors": [
+            83
+          ],
+          "signature": {
+            "2": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 7,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 5.733596852138027,
+            "combined_score": 7.636363636363636
+          }
+        },
+        {
+          "n": 1147,
+          "factors": [
+            31,
+            37
+          ],
+          "signature": {
+            "2": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 11,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.1935483870967742,
+            "gnfs_estimate": 7.661791340097075,
+            "combined_score": 20.855764842908723
+          }
+        },
+        {
+          "n": 83,
+          "factors": [
+            83
+          ],
+          "signature": {
+            "2": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 7,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 5.733596852138027,
+            "combined_score": 7.636363636363636
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 83,
+            "factors": [
+              83
+            ],
+            "signature": {
+              "2": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 7,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 5.733596852138027,
+              "combined_score": 7.636363636363636
+            }
+          },
+          "prompts": [
+            "Factor the number 83 into its prime factors.",
+            "Is 83 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(83) for K = [2].",
+            "Determine whether 83 belongs to S(1,[2])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 89,
+            "factors": [
+              89
+            ],
+            "signature": {
+              "2": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 7,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 5.733596852138027,
+              "combined_score": 7.636363636363636
+            }
+          },
+          "prompts": [
+            "Factor the number 89 into its prime factors.",
+            "Is 89 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(89) for K = [2].",
+            "Determine whether 89 belongs to S(1,[2])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 83,
+            "factors": [
+              83
+            ],
+            "signature": {
+              "2": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 7,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 5.733596852138027,
+              "combined_score": 7.636363636363636
+            }
+          },
+          "prompts": [
+            "Factor the number 83 into its prime factors.",
+            "Is 83 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(83) for K = [2].",
+            "Determine whether 83 belongs to S(1,[2])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 1147,
+            "factors": [
+              31,
+              37
+            ],
+            "signature": {
+              "2": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 11,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.1935483870967742,
+              "gnfs_estimate": 7.661791340097075,
+              "combined_score": 20.855764842908723
+            }
+          },
+          "prompts": [
+            "Factor the number 1147 into its prime factors.",
+            "Is 1147 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(1147) for K = [2].",
+            "Determine whether 1147 belongs to S(2,[2])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 83,
+            "factors": [
+              83
+            ],
+            "signature": {
+              "2": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 7,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 5.733596852138027,
+              "combined_score": 7.636363636363636
+            }
+          },
+          "prompts": [
+            "Factor the number 83 into its prime factors.",
+            "Is 83 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(83) for K = [2].",
+            "Determine whether 83 belongs to S(1,[2])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 3,
+        "N": 3,
+        "K": [
+          1,
+          2,
+          3
+        ],
+        "description": "Mixed medium factorization",
+        "category": "intermediate",
+        "capabilities": [
+          "factorization_algorithms",
+          "number_patterns"
+        ]
+      },
+      "samples": [
+        {
+          "n": 511535,
+          "factors": [
+            5,
+            263,
+            389
+          ],
+          "signature": {
+            "1": 1,
+            "2": 0,
+            "3": 2
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 19,
+            "factor_count": 3,
+            "size_variance": 0.8888888888888888,
+            "min_relative_gap": 0.4790874524714829,
+            "gnfs_estimate": 10.541413679863894,
+            "combined_score": 55.743806620890766
+          }
+        },
+        {
+          "n": 13199,
+          "factors": [
+            67,
+            197
+          ],
+          "signature": {
+            "1": 0,
+            "2": 1,
+            "3": 1
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 14,
+            "factor_count": 2,
+            "size_variance": 0.25,
+            "min_relative_gap": 1.9402985074626866,
+            "gnfs_estimate": 8.850908395661985,
+            "combined_score": 23.365559921709973
+          }
+        },
+        {
+          "n": 335,
+          "factors": [
+            5,
+            67
+          ],
+          "signature": {
+            "1": 1,
+            "2": 1,
+            "3": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 9,
+            "factor_count": 2,
+            "size_variance": 0.25,
+            "min_relative_gap": 12.4,
+            "gnfs_estimate": 6.7604626777699,
+            "combined_score": 14.433463617579811
+          }
+        },
+        {
+          "n": 3901,
+          "factors": [
+            47,
+            83
+          ],
+          "signature": {
+            "1": 0,
+            "2": 2,
+            "3": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 12,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.7659574468085106,
+            "gnfs_estimate": 8.07693184914105,
+            "combined_score": 18.93030832385411
+          }
+        },
+        {
+          "n": 2503555,
+          "factors": [
+            5,
+            587,
+            853
+          ],
+          "signature": {
+            "1": 1,
+            "2": 0,
+            "3": 2
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 22,
+            "factor_count": 3,
+            "size_variance": 0.8888888888888888,
+            "min_relative_gap": 0.45315161839863716,
+            "gnfs_estimate": 11.43378858644233,
+            "combined_score": 64.99111247026848
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 511535,
+            "factors": [
+              5,
+              263,
+              389
+            ],
+            "signature": {
+              "1": 1,
+              "2": 0,
+              "3": 2
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 19,
+              "factor_count": 3,
+              "size_variance": 0.8888888888888888,
+              "min_relative_gap": 0.4790874524714829,
+              "gnfs_estimate": 10.541413679863894,
+              "combined_score": 55.743806620890766
+            }
+          },
+          "prompts": [
+            "Factor the number 511535 into its prime factors.",
+            "Is 511535 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(511535) for K = [1, 2, 3].",
+            "Determine whether 511535 belongs to S(3,[1, 2, 3])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 13199,
+            "factors": [
+              67,
+              197
+            ],
+            "signature": {
+              "1": 0,
+              "2": 1,
+              "3": 1
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 14,
+              "factor_count": 2,
+              "size_variance": 0.25,
+              "min_relative_gap": 1.9402985074626866,
+              "gnfs_estimate": 8.850908395661985,
+              "combined_score": 23.365559921709973
+            }
+          },
+          "prompts": [
+            "Factor the number 13199 into its prime factors.",
+            "Is 13199 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(13199) for K = [1, 2, 3].",
+            "Determine whether 13199 belongs to S(2,[1, 2, 3])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 335,
+            "factors": [
+              5,
+              67
+            ],
+            "signature": {
+              "1": 1,
+              "2": 1,
+              "3": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 9,
+              "factor_count": 2,
+              "size_variance": 0.25,
+              "min_relative_gap": 12.4,
+              "gnfs_estimate": 6.7604626777699,
+              "combined_score": 14.433463617579811
+            }
+          },
+          "prompts": [
+            "Factor the number 335 into its prime factors.",
+            "Is 335 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(335) for K = [1, 2, 3].",
+            "Determine whether 335 belongs to S(2,[1, 2, 3])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 3901,
+            "factors": [
+              47,
+              83
+            ],
+            "signature": {
+              "1": 0,
+              "2": 2,
+              "3": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 12,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.7659574468085106,
+              "gnfs_estimate": 8.07693184914105,
+              "combined_score": 18.93030832385411
+            }
+          },
+          "prompts": [
+            "Factor the number 3901 into its prime factors.",
+            "Is 3901 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(3901) for K = [1, 2, 3].",
+            "Determine whether 3901 belongs to S(2,[1, 2, 3])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 2503555,
+            "factors": [
+              5,
+              587,
+              853
+            ],
+            "signature": {
+              "1": 1,
+              "2": 0,
+              "3": 2
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 22,
+              "factor_count": 3,
+              "size_variance": 0.8888888888888888,
+              "min_relative_gap": 0.45315161839863716,
+              "gnfs_estimate": 11.43378858644233,
+              "combined_score": 64.99111247026848
+            }
+          },
+          "prompts": [
+            "Factor the number 2503555 into its prime factors.",
+            "Is 2503555 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(2503555) for K = [1, 2, 3].",
+            "Determine whether 2503555 belongs to S(3,[1, 2, 3])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 4,
+        "N": 4,
+        "K": [
+          2,
+          3,
+          4
+        ],
+        "description": "Complex mixed factorization",
+        "category": "intermediate",
+        "capabilities": [
+          "factorization_algorithms",
+          "number_patterns"
+        ]
+      },
+      "samples": [
+        {
+          "n": 43114657,
+          "factors": [
+            37,
+            41,
+            97,
+            293
+          ],
+          "signature": {
+            "2": 3,
+            "3": 1,
+            "4": 0
+          },
+          "factor_count": 4,
+          "difficulty": {
+            "bit_length": 26,
+            "factor_count": 4,
+            "size_variance": 0.1875,
+            "min_relative_gap": 0.10810810810810811,
+            "gnfs_estimate": 12.520250913515818,
+            "combined_score": 84.20454545454545
+          }
+        },
+        {
+          "n": 316039,
+          "factors": [
+            53,
+            67,
+            89
+          ],
+          "signature": {
+            "2": 3,
+            "3": 0,
+            "4": 0
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 19,
+            "factor_count": 3,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.2641509433962264,
+            "gnfs_estimate": 10.541413679863894,
+            "combined_score": 41.946142355320895
+          }
+        },
+        {
+          "n": 1108086769,
+          "factors": [
+            83,
+            3257,
+            4099
+          ],
+          "signature": {
+            "2": 1,
+            "3": 0,
+            "4": 2
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 31,
+            "factor_count": 3,
+            "size_variance": 0.8888888888888888,
+            "min_relative_gap": 0.25852011053116364,
+            "gnfs_estimate": 13.749881771834918,
+            "combined_score": 99.19003210845771
+          }
+        },
+        {
+          "n": 95341357,
+          "factors": [
+            29,
+            709,
+            4637
+          ],
+          "signature": {
+            "2": 1,
+            "3": 1,
+            "4": 1
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 27,
+            "factor_count": 3,
+            "size_variance": 0.6666666666666666,
+            "min_relative_gap": 5.540197461212976,
+            "gnfs_estimate": 12.776473852126436,
+            "combined_score": 63.45935471234023
+          }
+        },
+        {
+          "n": 648146069,
+          "factors": [
+            19,
+            4549,
+            7499
+          ],
+          "signature": {
+            "2": 1,
+            "3": 0,
+            "4": 2
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 30,
+            "factor_count": 3,
+            "size_variance": 0.8888888888888888,
+            "min_relative_gap": 0.6484941745438558,
+            "gnfs_estimate": 13.513699575836148,
+            "combined_score": 85.08307262250146
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 43114657,
+            "factors": [
+              37,
+              41,
+              97,
+              293
+            ],
+            "signature": {
+              "2": 3,
+              "3": 1,
+              "4": 0
+            },
+            "factor_count": 4,
+            "difficulty": {
+              "bit_length": 26,
+              "factor_count": 4,
+              "size_variance": 0.1875,
+              "min_relative_gap": 0.10810810810810811,
+              "gnfs_estimate": 12.520250913515818,
+              "combined_score": 84.20454545454545
+            }
+          },
+          "prompts": [
+            "Factor the number 43114657 into its prime factors.",
+            "Is 43114657 a product of exactly 4 primes? If so, what are they?",
+            "Find the signature \u03c9_K(43114657) for K = [2, 3, 4].",
+            "Determine whether 43114657 belongs to S(4,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 316039,
+            "factors": [
+              53,
+              67,
+              89
+            ],
+            "signature": {
+              "2": 3,
+              "3": 0,
+              "4": 0
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 19,
+              "factor_count": 3,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.2641509433962264,
+              "gnfs_estimate": 10.541413679863894,
+              "combined_score": 41.946142355320895
+            }
+          },
+          "prompts": [
+            "Factor the number 316039 into its prime factors.",
+            "Is 316039 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(316039) for K = [2, 3, 4].",
+            "Determine whether 316039 belongs to S(3,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 1108086769,
+            "factors": [
+              83,
+              3257,
+              4099
+            ],
+            "signature": {
+              "2": 1,
+              "3": 0,
+              "4": 2
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 31,
+              "factor_count": 3,
+              "size_variance": 0.8888888888888888,
+              "min_relative_gap": 0.25852011053116364,
+              "gnfs_estimate": 13.749881771834918,
+              "combined_score": 99.19003210845771
+            }
+          },
+          "prompts": [
+            "Factor the number 1108086769 into its prime factors.",
+            "Is 1108086769 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(1108086769) for K = [2, 3, 4].",
+            "Determine whether 1108086769 belongs to S(3,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 95341357,
+            "factors": [
+              29,
+              709,
+              4637
+            ],
+            "signature": {
+              "2": 1,
+              "3": 1,
+              "4": 1
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 27,
+              "factor_count": 3,
+              "size_variance": 0.6666666666666666,
+              "min_relative_gap": 5.540197461212976,
+              "gnfs_estimate": 12.776473852126436,
+              "combined_score": 63.45935471234023
+            }
+          },
+          "prompts": [
+            "Factor the number 95341357 into its prime factors.",
+            "Is 95341357 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(95341357) for K = [2, 3, 4].",
+            "Determine whether 95341357 belongs to S(3,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 648146069,
+            "factors": [
+              19,
+              4549,
+              7499
+            ],
+            "signature": {
+              "2": 1,
+              "3": 0,
+              "4": 2
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 30,
+              "factor_count": 3,
+              "size_variance": 0.8888888888888888,
+              "min_relative_gap": 0.6484941745438558,
+              "gnfs_estimate": 13.513699575836148,
+              "combined_score": 85.08307262250146
+            }
+          },
+          "prompts": [
+            "Factor the number 648146069 into its prime factors.",
+            "Is 648146069 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(648146069) for K = [2, 3, 4].",
+            "Determine whether 648146069 belongs to S(3,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 5,
+        "N": 2,
+        "K": [
+          4,
+          5
+        ],
+        "description": "RSA-like semiprimes",
+        "category": "advanced",
+        "capabilities": [
+          "algorithm_application",
+          "mathematical_insight"
+        ]
+      },
+      "samples": [
+        {
+          "n": 20089,
+          "factors": [
+            20089
+          ],
+          "signature": {
+            "4": 0,
+            "5": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 15,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 9.213985218556019,
+            "combined_score": 16.363636363636363
+          }
+        },
+        {
+          "n": 3121,
+          "factors": [
+            3121
+          ],
+          "signature": {
+            "4": 1,
+            "5": 0
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 12,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 8.07693184914105,
+            "combined_score": 13.09090909090909
+          }
+        },
+        {
+          "n": 9659717,
+          "factors": [
+            2381,
+            4057
+          ],
+          "signature": {
+            "4": 2,
+            "5": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 24,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.7039059218815624,
+            "gnfs_estimate": 11.990129236361085,
+            "combined_score": 38.16315254926337
+          }
+        },
+        {
+          "n": 1083480649,
+          "factors": [
+            19993,
+            54193
+          ],
+          "signature": {
+            "4": 0,
+            "5": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 31,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.710598709548342,
+            "gnfs_estimate": 13.749881771834918,
+            "combined_score": 46.26195323372586
+          }
+        },
+        {
+          "n": 26951,
+          "factors": [
+            26951
+          ],
+          "signature": {
+            "4": 0,
+            "5": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 15,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 9.213985218556019,
+            "combined_score": 16.363636363636363
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 20089,
+            "factors": [
+              20089
+            ],
+            "signature": {
+              "4": 0,
+              "5": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 15,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 9.213985218556019,
+              "combined_score": 16.363636363636363
+            }
+          },
+          "prompts": [
+            "Factor the number 20089 into its prime factors.",
+            "Is 20089 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(20089) for K = [4, 5].",
+            "Determine whether 20089 belongs to S(1,[4, 5])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 3121,
+            "factors": [
+              3121
+            ],
+            "signature": {
+              "4": 1,
+              "5": 0
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 12,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 8.07693184914105,
+              "combined_score": 13.09090909090909
+            }
+          },
+          "prompts": [
+            "Factor the number 3121 into its prime factors.",
+            "Is 3121 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(3121) for K = [4, 5].",
+            "Determine whether 3121 belongs to S(1,[4, 5])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 9659717,
+            "factors": [
+              2381,
+              4057
+            ],
+            "signature": {
+              "4": 2,
+              "5": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 24,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.7039059218815624,
+              "gnfs_estimate": 11.990129236361085,
+              "combined_score": 38.16315254926337
+            }
+          },
+          "prompts": [
+            "Factor the number 9659717 into its prime factors.",
+            "Is 9659717 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(9659717) for K = [4, 5].",
+            "Determine whether 9659717 belongs to S(2,[4, 5])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 1083480649,
+            "factors": [
+              19993,
+              54193
+            ],
+            "signature": {
+              "4": 0,
+              "5": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 31,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.710598709548342,
+              "gnfs_estimate": 13.749881771834918,
+              "combined_score": 46.26195323372586
+            }
+          },
+          "prompts": [
+            "Factor the number 1083480649 into its prime factors.",
+            "Is 1083480649 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(1083480649) for K = [4, 5].",
+            "Determine whether 1083480649 belongs to S(2,[4, 5])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 26951,
+            "factors": [
+              26951
+            ],
+            "signature": {
+              "4": 0,
+              "5": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 15,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 9.213985218556019,
+              "combined_score": 16.363636363636363
+            }
+          },
+          "prompts": [
+            "Factor the number 26951 into its prime factors.",
+            "Is 26951 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(26951) for K = [4, 5].",
+            "Determine whether 26951 belongs to S(1,[4, 5])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 6,
+        "N": 3,
+        "K": [
+          1,
+          2,
+          6
+        ],
+        "description": "Mixed with one large prime",
+        "category": "advanced",
+        "capabilities": [
+          "algorithm_application",
+          "mathematical_insight"
+        ]
+      },
+      "samples": [
+        {
+          "n": 165,
+          "factors": [
+            3,
+            5,
+            11
+          ],
+          "signature": {
+            "1": 2,
+            "2": 1,
+            "6": 0
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 8,
+            "factor_count": 3,
+            "size_variance": 0.2222222222222222,
+            "min_relative_gap": 0.6666666666666666,
+            "gnfs_estimate": 6.265760016968338,
+            "combined_score": 17.40418202774524
+          }
+        },
+        {
+          "n": 8890934,
+          "factors": [
+            2,
+            13,
+            341959
+          ],
+          "signature": {
+            "1": 1,
+            "2": 1,
+            "6": 1
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 24,
+            "factor_count": 3,
+            "size_variance": 4.666666666666667,
+            "min_relative_gap": 5.5,
+            "gnfs_estimate": 11.990129236361085,
+            "combined_score": 141.03842290203715
+          }
+        },
+        {
+          "n": 31,
+          "factors": [
+            31
+          ],
+          "signature": {
+            "1": 0,
+            "2": 1,
+            "6": 0
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 5,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 4.515980978717308,
+            "combined_score": 5.454545454545454
+          }
+        },
+        {
+          "n": 163027518299,
+          "factors": [
+            209771,
+            777169
+          ],
+          "signature": {
+            "1": 0,
+            "2": 0,
+            "6": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 38,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 2.704844806956157,
+            "gnfs_estimate": 15.291473706960812,
+            "combined_score": 55.6560900165074
+          }
+        },
+        {
+          "n": 3901,
+          "factors": [
+            47,
+            83
+          ],
+          "signature": {
+            "1": 0,
+            "2": 2,
+            "6": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 12,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.7659574468085106,
+            "gnfs_estimate": 8.07693184914105,
+            "combined_score": 18.93030832385411
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 165,
+            "factors": [
+              3,
+              5,
+              11
+            ],
+            "signature": {
+              "1": 2,
+              "2": 1,
+              "6": 0
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 8,
+              "factor_count": 3,
+              "size_variance": 0.2222222222222222,
+              "min_relative_gap": 0.6666666666666666,
+              "gnfs_estimate": 6.265760016968338,
+              "combined_score": 17.40418202774524
+            }
+          },
+          "prompts": [
+            "Factor the number 165 into its prime factors.",
+            "Is 165 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(165) for K = [1, 2, 6].",
+            "Determine whether 165 belongs to S(3,[1, 2, 6])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 8890934,
+            "factors": [
+              2,
+              13,
+              341959
+            ],
+            "signature": {
+              "1": 1,
+              "2": 1,
+              "6": 1
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 24,
+              "factor_count": 3,
+              "size_variance": 4.666666666666667,
+              "min_relative_gap": 5.5,
+              "gnfs_estimate": 11.990129236361085,
+              "combined_score": 141.03842290203715
+            }
+          },
+          "prompts": [
+            "Factor the number 8890934 into its prime factors.",
+            "Is 8890934 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(8890934) for K = [1, 2, 6].",
+            "Determine whether 8890934 belongs to S(3,[1, 2, 6])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 31,
+            "factors": [
+              31
+            ],
+            "signature": {
+              "1": 0,
+              "2": 1,
+              "6": 0
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 5,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 4.515980978717308,
+              "combined_score": 5.454545454545454
+            }
+          },
+          "prompts": [
+            "Factor the number 31 into its prime factors.",
+            "Is 31 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(31) for K = [1, 2, 6].",
+            "Determine whether 31 belongs to S(1,[1, 2, 6])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 163027518299,
+            "factors": [
+              209771,
+              777169
+            ],
+            "signature": {
+              "1": 0,
+              "2": 0,
+              "6": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 38,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 2.704844806956157,
+              "gnfs_estimate": 15.291473706960812,
+              "combined_score": 55.6560900165074
+            }
+          },
+          "prompts": [
+            "Factor the number 163027518299 into its prime factors.",
+            "Is 163027518299 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(163027518299) for K = [1, 2, 6].",
+            "Determine whether 163027518299 belongs to S(2,[1, 2, 6])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 3901,
+            "factors": [
+              47,
+              83
+            ],
+            "signature": {
+              "1": 0,
+              "2": 2,
+              "6": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 12,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.7659574468085106,
+              "gnfs_estimate": 8.07693184914105,
+              "combined_score": 18.93030832385411
+            }
+          },
+          "prompts": [
+            "Factor the number 3901 into its prime factors.",
+            "Is 3901 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(3901) for K = [1, 2, 6].",
+            "Determine whether 3901 belongs to S(2,[1, 2, 6])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 7,
+        "N": 2,
+        "K": [
+          5
+        ],
+        "description": "Adversarial large semiprimes",
+        "category": "advanced",
+        "capabilities": [
+          "algorithm_application",
+          "mathematical_insight"
+        ]
+      },
+      "samples": [
+        {
+          "n": 60091,
+          "factors": [
+            60091
+          ],
+          "signature": {
+            "5": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 16,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 9.56333964245982,
+            "combined_score": 17.454545454545453
+          }
+        },
+        {
+          "n": 3135560333,
+          "factors": [
+            42169,
+            74357
+          ],
+          "signature": {
+            "5": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 32,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.7633095401835471,
+            "gnfs_estimate": 13.981687375553397,
+            "combined_score": 50.496851127629434
+          }
+        },
+        {
+          "n": 1069737301,
+          "factors": [
+            13457,
+            79493
+          ],
+          "signature": {
+            "5": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 30,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 4.907185851229843,
+            "gnfs_estimate": 13.513699575836148,
+            "combined_score": 43.27371727930906
+          }
+        },
+        {
+          "n": 5106099059,
+          "factors": [
+            66931,
+            76289
+          ],
+          "signature": {
+            "5": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 33,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.13981563102299382,
+            "gnfs_estimate": 14.209329286973563,
+            "combined_score": 66.12943358871124
+          }
+        },
+        {
+          "n": 46273,
+          "factors": [
+            46273
+          ],
+          "signature": {
+            "5": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 16,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 9.56333964245982,
+            "combined_score": 17.454545454545453
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 60091,
+            "factors": [
+              60091
+            ],
+            "signature": {
+              "5": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 16,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 9.56333964245982,
+              "combined_score": 17.454545454545453
+            }
+          },
+          "prompts": [
+            "Factor the number 60091 into its prime factors.",
+            "Is 60091 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(60091) for K = [5].",
+            "Determine whether 60091 belongs to S(1,[5])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 3135560333,
+            "factors": [
+              42169,
+              74357
+            ],
+            "signature": {
+              "5": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 32,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.7633095401835471,
+              "gnfs_estimate": 13.981687375553397,
+              "combined_score": 50.496851127629434
+            }
+          },
+          "prompts": [
+            "Factor the number 3135560333 into its prime factors.",
+            "Is 3135560333 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(3135560333) for K = [5].",
+            "Determine whether 3135560333 belongs to S(2,[5])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 1069737301,
+            "factors": [
+              13457,
+              79493
+            ],
+            "signature": {
+              "5": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 30,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 4.907185851229843,
+              "gnfs_estimate": 13.513699575836148,
+              "combined_score": 43.27371727930906
+            }
+          },
+          "prompts": [
+            "Factor the number 1069737301 into its prime factors.",
+            "Is 1069737301 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(1069737301) for K = [5].",
+            "Determine whether 1069737301 belongs to S(2,[5])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 5106099059,
+            "factors": [
+              66931,
+              76289
+            ],
+            "signature": {
+              "5": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 33,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.13981563102299382,
+              "gnfs_estimate": 14.209329286973563,
+              "combined_score": 66.12943358871124
+            }
+          },
+          "prompts": [
+            "Factor the number 5106099059 into its prime factors.",
+            "Is 5106099059 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(5106099059) for K = [5].",
+            "Determine whether 5106099059 belongs to S(2,[5])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 46273,
+            "factors": [
+              46273
+            ],
+            "signature": {
+              "5": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 16,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 9.56333964245982,
+              "combined_score": 17.454545454545453
+            }
+          },
+          "prompts": [
+            "Factor the number 46273 into its prime factors.",
+            "Is 46273 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(46273) for K = [5].",
+            "Determine whether 46273 belongs to S(1,[5])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 8,
+        "N": 3,
+        "K": [
+          5,
+          6
+        ],
+        "description": "Multiple large prime factors",
+        "category": "research",
+        "capabilities": [
+          "advanced_factorization",
+          "mathematical_creativity"
+        ]
+      },
+      "samples": [
+        {
+          "n": 1293760835825551,
+          "factors": [
+            35933,
+            38239,
+            941573
+          ],
+          "signature": {
+            "5": 2,
+            "6": 1
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 51,
+            "factor_count": 3,
+            "size_variance": 0.22222222222222224,
+            "min_relative_gap": 0.06417499234686778,
+            "gnfs_estimate": 17.765012171024956,
+            "combined_score": 157.93303919153203
+          }
+        },
+        {
+          "n": 17041,
+          "factors": [
+            17041
+          ],
+          "signature": {
+            "5": 1,
+            "6": 0
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 15,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 9.213985218556019,
+            "combined_score": 16.363636363636363
+          }
+        },
+        {
+          "n": 39213518447,
+          "factors": [
+            70141,
+            559067
+          ],
+          "signature": {
+            "5": 1,
+            "6": 1
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 36,
+            "factor_count": 2,
+            "size_variance": 0.25,
+            "min_relative_gap": 6.97061632996393,
+            "gnfs_estimate": 14.869165219377566,
+            "combined_score": 58.08570099725081
+          }
+        },
+        {
+          "n": 2375852603,
+          "factors": [
+            41077,
+            57839
+          ],
+          "signature": {
+            "5": 2,
+            "6": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 32,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.40806290624923924,
+            "gnfs_estimate": 13.981687375553397,
+            "combined_score": 54.16216287968528
+          }
+        },
+        {
+          "n": 151137696263,
+          "factors": [
+            384497,
+            393079
+          ],
+          "signature": {
+            "5": 0,
+            "6": 2
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 38,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.02232007011758219,
+            "gnfs_estimate": 15.291473706960812,
+            "combined_score": 97.67412825826624
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 1293760835825551,
+            "factors": [
+              35933,
+              38239,
+              941573
+            ],
+            "signature": {
+              "5": 2,
+              "6": 1
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 51,
+              "factor_count": 3,
+              "size_variance": 0.22222222222222224,
+              "min_relative_gap": 0.06417499234686778,
+              "gnfs_estimate": 17.765012171024956,
+              "combined_score": 157.93303919153203
+            }
+          },
+          "prompts": [
+            "Factor the number 1293760835825551 into its prime factors.",
+            "Is 1293760835825551 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(1293760835825551) for K = [5, 6].",
+            "Determine whether 1293760835825551 belongs to S(3,[5, 6])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 17041,
+            "factors": [
+              17041
+            ],
+            "signature": {
+              "5": 1,
+              "6": 0
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 15,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 9.213985218556019,
+              "combined_score": 16.363636363636363
+            }
+          },
+          "prompts": [
+            "Factor the number 17041 into its prime factors.",
+            "Is 17041 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(17041) for K = [5, 6].",
+            "Determine whether 17041 belongs to S(1,[5, 6])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 39213518447,
+            "factors": [
+              70141,
+              559067
+            ],
+            "signature": {
+              "5": 1,
+              "6": 1
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 36,
+              "factor_count": 2,
+              "size_variance": 0.25,
+              "min_relative_gap": 6.97061632996393,
+              "gnfs_estimate": 14.869165219377566,
+              "combined_score": 58.08570099725081
+            }
+          },
+          "prompts": [
+            "Factor the number 39213518447 into its prime factors.",
+            "Is 39213518447 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(39213518447) for K = [5, 6].",
+            "Determine whether 39213518447 belongs to S(2,[5, 6])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 2375852603,
+            "factors": [
+              41077,
+              57839
+            ],
+            "signature": {
+              "5": 2,
+              "6": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 32,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.40806290624923924,
+              "gnfs_estimate": 13.981687375553397,
+              "combined_score": 54.16216287968528
+            }
+          },
+          "prompts": [
+            "Factor the number 2375852603 into its prime factors.",
+            "Is 2375852603 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(2375852603) for K = [5, 6].",
+            "Determine whether 2375852603 belongs to S(2,[5, 6])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 151137696263,
+            "factors": [
+              384497,
+              393079
+            ],
+            "signature": {
+              "5": 0,
+              "6": 2
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 38,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.02232007011758219,
+              "gnfs_estimate": 15.291473706960812,
+              "combined_score": 97.67412825826624
+            }
+          },
+          "prompts": [
+            "Factor the number 151137696263 into its prime factors.",
+            "Is 151137696263 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(151137696263) for K = [5, 6].",
+            "Determine whether 151137696263 belongs to S(2,[5, 6])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 9,
+        "N": 6,
+        "K": [
+          2,
+          3,
+          4
+        ],
+        "description": "Many medium-sized factors",
+        "category": "research",
+        "capabilities": [
+          "advanced_factorization",
+          "mathematical_creativity"
+        ]
+      },
+      "samples": [
+        {
+          "n": 214717,
+          "factors": [
+            41,
+            5237
+          ],
+          "signature": {
+            "2": 1,
+            "3": 0,
+            "4": 1
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 18,
+            "factor_count": 2,
+            "size_variance": 1.0,
+            "min_relative_gap": 126.73170731707317,
+            "gnfs_estimate": 10.226003161013965,
+            "combined_score": 38.21387203614463
+          }
+        },
+        {
+          "n": 68401,
+          "factors": [
+            73,
+            937
+          ],
+          "signature": {
+            "2": 1,
+            "3": 1,
+            "4": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 17,
+            "factor_count": 2,
+            "size_variance": 0.25,
+            "min_relative_gap": 11.835616438356164,
+            "gnfs_estimate": 9.900302027220437,
+            "combined_score": 27.273440475848332
+          }
+        },
+        {
+          "n": 6004183,
+          "factors": [
+            743,
+            8081
+          ],
+          "signature": {
+            "2": 0,
+            "3": 1,
+            "4": 1
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 23,
+            "factor_count": 2,
+            "size_variance": 0.25,
+            "min_relative_gap": 9.876177658142664,
+            "gnfs_estimate": 11.71545694256501,
+            "combined_score": 36.95957749289895
+          }
+        },
+        {
+          "n": 33325814951,
+          "factors": [
+            11,
+            13,
+            89,
+            563,
+            4651
+          ],
+          "signature": {
+            "2": 3,
+            "3": 1,
+            "4": 1
+          },
+          "factor_count": 5,
+          "difficulty": {
+            "bit_length": 35,
+            "factor_count": 5,
+            "size_variance": 0.64,
+            "min_relative_gap": 0.18181818181818182,
+            "gnfs_estimate": 14.652893108956405,
+            "combined_score": 139.96342914647073
+          }
+        },
+        {
+          "n": 31369635957097647841,
+          "factors": [
+            311,
+            503,
+            907,
+            4421,
+            5501,
+            9091
+          ],
+          "signature": {
+            "2": 0,
+            "3": 3,
+            "4": 3
+          },
+          "factor_count": 6,
+          "difficulty": {
+            "bit_length": 65,
+            "factor_count": 6,
+            "size_variance": 0.25,
+            "min_relative_gap": 0.244288622483601,
+            "gnfs_estimate": 20.045284661690303,
+            "combined_score": 231.14474536604118
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 214717,
+            "factors": [
+              41,
+              5237
+            ],
+            "signature": {
+              "2": 1,
+              "3": 0,
+              "4": 1
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 18,
+              "factor_count": 2,
+              "size_variance": 1.0,
+              "min_relative_gap": 126.73170731707317,
+              "gnfs_estimate": 10.226003161013965,
+              "combined_score": 38.21387203614463
+            }
+          },
+          "prompts": [
+            "Factor the number 214717 into its prime factors.",
+            "Is 214717 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(214717) for K = [2, 3, 4].",
+            "Determine whether 214717 belongs to S(2,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 68401,
+            "factors": [
+              73,
+              937
+            ],
+            "signature": {
+              "2": 1,
+              "3": 1,
+              "4": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 17,
+              "factor_count": 2,
+              "size_variance": 0.25,
+              "min_relative_gap": 11.835616438356164,
+              "gnfs_estimate": 9.900302027220437,
+              "combined_score": 27.273440475848332
+            }
+          },
+          "prompts": [
+            "Factor the number 68401 into its prime factors.",
+            "Is 68401 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(68401) for K = [2, 3, 4].",
+            "Determine whether 68401 belongs to S(2,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 6004183,
+            "factors": [
+              743,
+              8081
+            ],
+            "signature": {
+              "2": 0,
+              "3": 1,
+              "4": 1
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 23,
+              "factor_count": 2,
+              "size_variance": 0.25,
+              "min_relative_gap": 9.876177658142664,
+              "gnfs_estimate": 11.71545694256501,
+              "combined_score": 36.95957749289895
+            }
+          },
+          "prompts": [
+            "Factor the number 6004183 into its prime factors.",
+            "Is 6004183 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(6004183) for K = [2, 3, 4].",
+            "Determine whether 6004183 belongs to S(2,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 33325814951,
+            "factors": [
+              11,
+              13,
+              89,
+              563,
+              4651
+            ],
+            "signature": {
+              "2": 3,
+              "3": 1,
+              "4": 1
+            },
+            "factor_count": 5,
+            "difficulty": {
+              "bit_length": 35,
+              "factor_count": 5,
+              "size_variance": 0.64,
+              "min_relative_gap": 0.18181818181818182,
+              "gnfs_estimate": 14.652893108956405,
+              "combined_score": 139.96342914647073
+            }
+          },
+          "prompts": [
+            "Factor the number 33325814951 into its prime factors.",
+            "Is 33325814951 a product of exactly 5 primes? If so, what are they?",
+            "Find the signature \u03c9_K(33325814951) for K = [2, 3, 4].",
+            "Determine whether 33325814951 belongs to S(5,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 31369635957097647841,
+            "factors": [
+              311,
+              503,
+              907,
+              4421,
+              5501,
+              9091
+            ],
+            "signature": {
+              "2": 0,
+              "3": 3,
+              "4": 3
+            },
+            "factor_count": 6,
+            "difficulty": {
+              "bit_length": 65,
+              "factor_count": 6,
+              "size_variance": 0.25,
+              "min_relative_gap": 0.244288622483601,
+              "gnfs_estimate": 20.045284661690303,
+              "combined_score": 231.14474536604118
+            }
+          },
+          "prompts": [
+            "Factor the number 31369635957097647841 into its prime factors.",
+            "Is 31369635957097647841 a product of exactly 6 primes? If so, what are they?",
+            "Find the signature \u03c9_K(31369635957097647841) for K = [2, 3, 4].",
+            "Determine whether 31369635957097647841 belongs to S(6,[2, 3, 4])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 13,
+        "special_type": "quantum_resistant",
+        "bit_length": 256,
+        "min_factor_bits": 64,
+        "description": "Quantum-resistant multi-factor (256-bit)",
+        "category": "quantum_resistant",
+        "capabilities": [
+          "post_quantum_cryptography",
+          "algorithm_limitations"
+        ]
+      },
+      "samples": [
+        {
+          "n": 1108642838498246135129569548353899765399643456485538281658037309827240591,
+          "factors": [
+            62221730766791872093,
+            89909643721437312645979,
+            198172456069789394087412756353
+          ],
+          "bit_length": 240,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        },
+        {
+          "n": 359470118545428746848267326816680178785657095911775717228711292422466448839649739834753289643355477,
+          "factors": [
+            337694947470639781178858423,
+            4545407384354676909045407914135951,
+            234188421255197245137861481692256842749
+          ],
+          "bit_length": 328,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        },
+        {
+          "n": 52213819943645109553718266959712161945000134955853329244118196749053990967618680467574428409,
+          "factors": [
+            203005791784217993529384835358101,
+            79963185388376045413907633538823667,
+            3216525156783693505749527
+          ],
+          "bit_length": 305,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        },
+        {
+          "n": 2427614938559273182955256976946306343980372671934963878344461681437765375493660148519924926639595517,
+          "factors": [
+            116708590291801493767183538525239,
+            53613494559781816808387672252317,
+            387974214278115467497126372470459559
+          ],
+          "bit_length": 331,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        },
+        {
+          "n": 3181078173640635488004284344435956180820331440489699101878661240086833980252953,
+          "factors": [
+            1431892454807122254807983,
+            2367244267551994107234936354427,
+            938471023281579721868533
+          ],
+          "bit_length": 261,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 1108642838498246135129569548353899765399643456485538281658037309827240591,
+            "factors": [
+              62221730766791872093,
+              89909643721437312645979,
+              198172456069789394087412756353
+            ],
+            "bit_length": 240,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 1108642838498246135129569548353899765399643456485538281658037309827240591 into its prime factors.",
+            "Is 1108642838498246135129569548353899765399643456485538281658037309827240591 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(1108642838498246135129569548353899765399643456485538281658037309827240591) for K = [].",
+            "Determine whether 1108642838498246135129569548353899765399643456485538281658037309827240591 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 359470118545428746848267326816680178785657095911775717228711292422466448839649739834753289643355477,
+            "factors": [
+              337694947470639781178858423,
+              4545407384354676909045407914135951,
+              234188421255197245137861481692256842749
+            ],
+            "bit_length": 328,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 359470118545428746848267326816680178785657095911775717228711292422466448839649739834753289643355477 into its prime factors.",
+            "Is 359470118545428746848267326816680178785657095911775717228711292422466448839649739834753289643355477 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(359470118545428746848267326816680178785657095911775717228711292422466448839649739834753289643355477) for K = [].",
+            "Determine whether 359470118545428746848267326816680178785657095911775717228711292422466448839649739834753289643355477 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 52213819943645109553718266959712161945000134955853329244118196749053990967618680467574428409,
+            "factors": [
+              203005791784217993529384835358101,
+              79963185388376045413907633538823667,
+              3216525156783693505749527
+            ],
+            "bit_length": 305,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 52213819943645109553718266959712161945000134955853329244118196749053990967618680467574428409 into its prime factors.",
+            "Is 52213819943645109553718266959712161945000134955853329244118196749053990967618680467574428409 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(52213819943645109553718266959712161945000134955853329244118196749053990967618680467574428409) for K = [].",
+            "Determine whether 52213819943645109553718266959712161945000134955853329244118196749053990967618680467574428409 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 2427614938559273182955256976946306343980372671934963878344461681437765375493660148519924926639595517,
+            "factors": [
+              116708590291801493767183538525239,
+              53613494559781816808387672252317,
+              387974214278115467497126372470459559
+            ],
+            "bit_length": 331,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 2427614938559273182955256976946306343980372671934963878344461681437765375493660148519924926639595517 into its prime factors.",
+            "Is 2427614938559273182955256976946306343980372671934963878344461681437765375493660148519924926639595517 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(2427614938559273182955256976946306343980372671934963878344461681437765375493660148519924926639595517) for K = [].",
+            "Determine whether 2427614938559273182955256976946306343980372671934963878344461681437765375493660148519924926639595517 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 3181078173640635488004284344435956180820331440489699101878661240086833980252953,
+            "factors": [
+              1431892454807122254807983,
+              2367244267551994107234936354427,
+              938471023281579721868533
+            ],
+            "bit_length": 261,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 3181078173640635488004284344435956180820331440489699101878661240086833980252953 into its prime factors.",
+            "Is 3181078173640635488004284344435956180820331440489699101878661240086833980252953 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(3181078173640635488004284344435956180820331440489699101878661240086833980252953) for K = [].",
+            "Determine whether 3181078173640635488004284344435956180820331440489699101878661240086833980252953 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 14,
+        "special_type": "quantum_resistant",
+        "bit_length": 512,
+        "min_factor_bits": 128,
+        "description": "Quantum-resistant multi-factor (512-bit)",
+        "category": "quantum_resistant",
+        "capabilities": [
+          "post_quantum_cryptography",
+          "algorithm_limitations"
+        ]
+      },
+      "samples": [
+        {
+          "n": 1417074910078154242593078885555958086813593977955604481707325027322531484916216213742487993739215828015246248495745540505275167358672180183854782822708604975915863126561448156407357850665913875287039353443,
+          "factors": [
+            42988871116844508737740613327744725992734692050958500506522633935026660299,
+            439028325011235337279493795204021006326274214587996701039,
+            75083451296783375725017849045251385732174219568261036259953839571170753863
+          ],
+          "bit_length": 679,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        },
+        {
+          "n": 19576694478861040293055625832850482636196729334630860193776127011083322904582397365529804948641657099344350263969728033312138465284447980301398829476682820309918212331464944440979457989,
+          "factors": [
+            75975566762604482480317817704119105078257622894255851272816506317754883484213,
+            664747369767630719584967993286661443823,
+            387622329298912603416384406026774478640254504294440094304120660261311
+          ],
+          "bit_length": 613,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        },
+        {
+          "n": 55745053927421509344597919386993220315632838680991625215742125535096481485427334864545131486436199803922705563799202621017601835651435779503744527599033757868776645698904707768789530376980057,
+          "factors": [
+            21424599561825004863588360892153553125799188061862560275225970383,
+            77577993826209418926496535554378408542693268790301672279383617,
+            33539384005454499760578049096274949138200890315556722561633768087
+          ],
+          "bit_length": 634,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        },
+        {
+          "n": 124563702707146760014009518660083179474641678006318231523758532992089084003861265150990927415826594634546445734955072478834448065390562508372494059514189754294979395115536122212243950183305493,
+          "factors": [
+            11507939805185107920562059033618932631788720485724317,
+            3854638907275008149074769540608649264247899477402248908592662394927111,
+            2808084854195180676101011511910035980994672079358229562062320054852639
+          ],
+          "bit_length": 635,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        },
+        {
+          "n": 727304070197812974391353623981597200263555752728736029995015053326686359320550913348879406123006351951829702461221224447252029054152769446686158893077340259019753728007,
+          "factors": [
+            8833059310190982432556788434601955669924650663846444119,
+            48462029359043165587496835541209287120295067724090493737813206112745947609,
+            1699038715398315635709603694319471673017
+          ],
+          "bit_length": 558,
+          "factor_count": 3,
+          "type": "quantum_resistant"
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 1417074910078154242593078885555958086813593977955604481707325027322531484916216213742487993739215828015246248495745540505275167358672180183854782822708604975915863126561448156407357850665913875287039353443,
+            "factors": [
+              42988871116844508737740613327744725992734692050958500506522633935026660299,
+              439028325011235337279493795204021006326274214587996701039,
+              75083451296783375725017849045251385732174219568261036259953839571170753863
+            ],
+            "bit_length": 679,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 1417074910078154242593078885555958086813593977955604481707325027322531484916216213742487993739215828015246248495745540505275167358672180183854782822708604975915863126561448156407357850665913875287039353443 into its prime factors.",
+            "Is 1417074910078154242593078885555958086813593977955604481707325027322531484916216213742487993739215828015246248495745540505275167358672180183854782822708604975915863126561448156407357850665913875287039353443 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(1417074910078154242593078885555958086813593977955604481707325027322531484916216213742487993739215828015246248495745540505275167358672180183854782822708604975915863126561448156407357850665913875287039353443) for K = [].",
+            "Determine whether 1417074910078154242593078885555958086813593977955604481707325027322531484916216213742487993739215828015246248495745540505275167358672180183854782822708604975915863126561448156407357850665913875287039353443 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 19576694478861040293055625832850482636196729334630860193776127011083322904582397365529804948641657099344350263969728033312138465284447980301398829476682820309918212331464944440979457989,
+            "factors": [
+              75975566762604482480317817704119105078257622894255851272816506317754883484213,
+              664747369767630719584967993286661443823,
+              387622329298912603416384406026774478640254504294440094304120660261311
+            ],
+            "bit_length": 613,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 19576694478861040293055625832850482636196729334630860193776127011083322904582397365529804948641657099344350263969728033312138465284447980301398829476682820309918212331464944440979457989 into its prime factors.",
+            "Is 19576694478861040293055625832850482636196729334630860193776127011083322904582397365529804948641657099344350263969728033312138465284447980301398829476682820309918212331464944440979457989 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(19576694478861040293055625832850482636196729334630860193776127011083322904582397365529804948641657099344350263969728033312138465284447980301398829476682820309918212331464944440979457989) for K = [].",
+            "Determine whether 19576694478861040293055625832850482636196729334630860193776127011083322904582397365529804948641657099344350263969728033312138465284447980301398829476682820309918212331464944440979457989 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 55745053927421509344597919386993220315632838680991625215742125535096481485427334864545131486436199803922705563799202621017601835651435779503744527599033757868776645698904707768789530376980057,
+            "factors": [
+              21424599561825004863588360892153553125799188061862560275225970383,
+              77577993826209418926496535554378408542693268790301672279383617,
+              33539384005454499760578049096274949138200890315556722561633768087
+            ],
+            "bit_length": 634,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 55745053927421509344597919386993220315632838680991625215742125535096481485427334864545131486436199803922705563799202621017601835651435779503744527599033757868776645698904707768789530376980057 into its prime factors.",
+            "Is 55745053927421509344597919386993220315632838680991625215742125535096481485427334864545131486436199803922705563799202621017601835651435779503744527599033757868776645698904707768789530376980057 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(55745053927421509344597919386993220315632838680991625215742125535096481485427334864545131486436199803922705563799202621017601835651435779503744527599033757868776645698904707768789530376980057) for K = [].",
+            "Determine whether 55745053927421509344597919386993220315632838680991625215742125535096481485427334864545131486436199803922705563799202621017601835651435779503744527599033757868776645698904707768789530376980057 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 124563702707146760014009518660083179474641678006318231523758532992089084003861265150990927415826594634546445734955072478834448065390562508372494059514189754294979395115536122212243950183305493,
+            "factors": [
+              11507939805185107920562059033618932631788720485724317,
+              3854638907275008149074769540608649264247899477402248908592662394927111,
+              2808084854195180676101011511910035980994672079358229562062320054852639
+            ],
+            "bit_length": 635,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 124563702707146760014009518660083179474641678006318231523758532992089084003861265150990927415826594634546445734955072478834448065390562508372494059514189754294979395115536122212243950183305493 into its prime factors.",
+            "Is 124563702707146760014009518660083179474641678006318231523758532992089084003861265150990927415826594634546445734955072478834448065390562508372494059514189754294979395115536122212243950183305493 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(124563702707146760014009518660083179474641678006318231523758532992089084003861265150990927415826594634546445734955072478834448065390562508372494059514189754294979395115536122212243950183305493) for K = [].",
+            "Determine whether 124563702707146760014009518660083179474641678006318231523758532992089084003861265150990927415826594634546445734955072478834448065390562508372494059514189754294979395115536122212243950183305493 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 727304070197812974391353623981597200263555752728736029995015053326686359320550913348879406123006351951829702461221224447252029054152769446686158893077340259019753728007,
+            "factors": [
+              8833059310190982432556788434601955669924650663846444119,
+              48462029359043165587496835541209287120295067724090493737813206112745947609,
+              1699038715398315635709603694319471673017
+            ],
+            "bit_length": 558,
+            "factor_count": 3,
+            "type": "quantum_resistant"
+          },
+          "prompts": [
+            "Factor the number 727304070197812974391353623981597200263555752728736029995015053326686359320550913348879406123006351951829702461221224447252029054152769446686158893077340259019753728007 into its prime factors.",
+            "Is 727304070197812974391353623981597200263555752728736029995015053326686359320550913348879406123006351951829702461221224447252029054152769446686158893077340259019753728007 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(727304070197812974391353623981597200263555752728736029995015053326686359320550913348879406123006351951829702461221224447252029054152769446686158893077340259019753728007) for K = [].",
+            "Determine whether 727304070197812974391353623981597200263555752728736029995015053326686359320550913348879406123006351951829702461221224447252029054152769446686158893077340259019753728007 belongs to S(3,[])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 15,
+        "special_type": "near_prime",
+        "digits": 40,
+        "gap_factor": 0.0001,
+        "description": "Near-prime challenge - extremely close primes",
+        "category": "adversarial",
+        "capabilities": [
+          "adversarial_reasoning",
+          "algorithm_robustness"
+        ]
+      },
+      "samples": [
+        {
+          "n": 28805537310287532100258103469659584856080689885604050760998403932320118867868877,
+          "factors": [
+            5367079029629387905633350637019476741613,
+            5367079029629387905633350637019476741729
+          ],
+          "bit_length": 264,
+          "gap": 2.161324611760191e-38,
+          "type": "near_prime"
+        },
+        {
+          "n": 75094306758754515497491383899210382579536984820642132032150809949279189161539817,
+          "factors": [
+            8665697130569156667327897056751081265769,
+            8665697130569156667327897056751081265793
+          ],
+          "bit_length": 266,
+          "gap": 2.7695405964902095e-39,
+          "type": "near_prime"
+        },
+        {
+          "n": 84162504167864544778358312977914055316822592672099237707065080064629368909255273,
+          "factors": [
+            9174012435562998776502167742896193136159,
+            9174012435562998776502167742896193136247
+          ],
+          "bit_length": 266,
+          "gap": 9.592313136492881e-39,
+          "type": "near_prime"
+        },
+        {
+          "n": 94793427190659940241085744334222937941006038467751647250751049302373755585216379,
+          "factors": [
+            9736191616369305015173057895371179464367,
+            9736191616369305015173057895371179464437
+          ],
+          "bit_length": 266,
+          "gap": 7.189669509206259e-39,
+          "type": "near_prime"
+        },
+        {
+          "n": 63562024143294007773742630850286050298515649446103636997633458064024520281331009,
+          "factors": [
+            7972579516272886178741510590393583892101,
+            7972579516272886178741510590393583892109
+          ],
+          "bit_length": 266,
+          "gap": 1.0034393490426964e-39,
+          "type": "near_prime"
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 28805537310287532100258103469659584856080689885604050760998403932320118867868877,
+            "factors": [
+              5367079029629387905633350637019476741613,
+              5367079029629387905633350637019476741729
+            ],
+            "bit_length": 264,
+            "gap": 2.161324611760191e-38,
+            "type": "near_prime"
+          },
+          "prompts": [
+            "Factor the number 28805537310287532100258103469659584856080689885604050760998403932320118867868877 into its prime factors.",
+            "Is 28805537310287532100258103469659584856080689885604050760998403932320118867868877 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(28805537310287532100258103469659584856080689885604050760998403932320118867868877) for K = [].",
+            "Determine whether 28805537310287532100258103469659584856080689885604050760998403932320118867868877 belongs to S(2,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_1": {
+          "sample": {
+            "n": 75094306758754515497491383899210382579536984820642132032150809949279189161539817,
+            "factors": [
+              8665697130569156667327897056751081265769,
+              8665697130569156667327897056751081265793
+            ],
+            "bit_length": 266,
+            "gap": 2.7695405964902095e-39,
+            "type": "near_prime"
+          },
+          "prompts": [
+            "Factor the number 75094306758754515497491383899210382579536984820642132032150809949279189161539817 into its prime factors.",
+            "Is 75094306758754515497491383899210382579536984820642132032150809949279189161539817 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(75094306758754515497491383899210382579536984820642132032150809949279189161539817) for K = [].",
+            "Determine whether 75094306758754515497491383899210382579536984820642132032150809949279189161539817 belongs to S(2,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_2": {
+          "sample": {
+            "n": 84162504167864544778358312977914055316822592672099237707065080064629368909255273,
+            "factors": [
+              9174012435562998776502167742896193136159,
+              9174012435562998776502167742896193136247
+            ],
+            "bit_length": 266,
+            "gap": 9.592313136492881e-39,
+            "type": "near_prime"
+          },
+          "prompts": [
+            "Factor the number 84162504167864544778358312977914055316822592672099237707065080064629368909255273 into its prime factors.",
+            "Is 84162504167864544778358312977914055316822592672099237707065080064629368909255273 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(84162504167864544778358312977914055316822592672099237707065080064629368909255273) for K = [].",
+            "Determine whether 84162504167864544778358312977914055316822592672099237707065080064629368909255273 belongs to S(2,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_3": {
+          "sample": {
+            "n": 94793427190659940241085744334222937941006038467751647250751049302373755585216379,
+            "factors": [
+              9736191616369305015173057895371179464367,
+              9736191616369305015173057895371179464437
+            ],
+            "bit_length": 266,
+            "gap": 7.189669509206259e-39,
+            "type": "near_prime"
+          },
+          "prompts": [
+            "Factor the number 94793427190659940241085744334222937941006038467751647250751049302373755585216379 into its prime factors.",
+            "Is 94793427190659940241085744334222937941006038467751647250751049302373755585216379 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(94793427190659940241085744334222937941006038467751647250751049302373755585216379) for K = [].",
+            "Determine whether 94793427190659940241085744334222937941006038467751647250751049302373755585216379 belongs to S(2,[])."
+          ],
+          "capability_prompts": {}
+        },
+        "sample_4": {
+          "sample": {
+            "n": 63562024143294007773742630850286050298515649446103636997633458064024520281331009,
+            "factors": [
+              7972579516272886178741510590393583892101,
+              7972579516272886178741510590393583892109
+            ],
+            "bit_length": 266,
+            "gap": 1.0034393490426964e-39,
+            "type": "near_prime"
+          },
+          "prompts": [
+            "Factor the number 63562024143294007773742630850286050298515649446103636997633458064024520281331009 into its prime factors.",
+            "Is 63562024143294007773742630850286050298515649446103636997633458064024520281331009 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(63562024143294007773742630850286050298515649446103636997633458064024520281331009) for K = [].",
+            "Determine whether 63562024143294007773742630850286050298515649446103636997633458064024520281331009 belongs to S(2,[])."
+          ],
+          "capability_prompts": {}
+        }
+      }
+    }
+  ]
+}

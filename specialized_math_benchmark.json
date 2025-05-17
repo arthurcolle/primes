@@ -1,0 +1,631 @@
+{
+  "metadata": {
+    "generation_date": "2025-05-17T18:20:51.997064",
+    "framework_version": "0.2.0",
+    "capabilities": [
+      "mathematical_insight",
+      "cryptographic_reasoning"
+    ],
+    "sample_count_per_tier": 5
+  },
+  "tiers": [
+    {
+      "tier_info": {
+        "tier": 5,
+        "N": 2,
+        "K": [
+          4,
+          5
+        ],
+        "description": "RSA-like semiprimes",
+        "category": "advanced",
+        "capabilities": [
+          "algorithm_application",
+          "mathematical_insight"
+        ]
+      },
+      "samples": [
+        {
+          "n": 9833,
+          "factors": [
+            9833
+          ],
+          "signature": {
+            "4": 1,
+            "5": 0
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 14,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 8.850908395661985,
+            "combined_score": 15.272727272727272
+          }
+        },
+        {
+          "n": 20543011,
+          "factors": [
+            2389,
+            8599
+          ],
+          "signature": {
+            "4": 2,
+            "5": 0
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 25,
+            "factor_count": 2,
+            "size_variance": 0.0,
+            "min_relative_gap": 2.599413980745082,
+            "gnfs_estimate": 12.25825832483777,
+            "combined_score": 36.66508033323042
+          }
+        },
+        {
+          "n": 311576429,
+          "factors": [
+            3923,
+            79423
+          ],
+          "signature": {
+            "4": 1,
+            "5": 1
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 29,
+            "factor_count": 2,
+            "size_variance": 0.25,
+            "min_relative_gap": 19.245475401478462,
+            "gnfs_estimate": 13.272909459426664,
+            "combined_score": 46.377216224791454
+          }
+        },
+        {
+          "n": 4349,
+          "factors": [
+            4349
+          ],
+          "signature": {
+            "4": 1,
+            "5": 0
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 13,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 8.47252641526413,
+            "combined_score": 14.18181818181818
+          }
+        },
+        {
+          "n": 3371,
+          "factors": [
+            3371
+          ],
+          "signature": {
+            "4": 1,
+            "5": 0
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 12,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 8.07693184914105,
+            "combined_score": 13.09090909090909
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 9833,
+            "factors": [
+              9833
+            ],
+            "signature": {
+              "4": 1,
+              "5": 0
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 14,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 8.850908395661985,
+              "combined_score": 15.272727272727272
+            }
+          },
+          "prompts": [
+            "Factor the number 9833 into its prime factors.",
+            "Is 9833 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(9833) for K = [4, 5].",
+            "Determine whether 9833 belongs to S(1,[4, 5])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 9833.",
+              "Based on the digit pattern of 9833, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 9833 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 9833 were used in a cryptographic protocol."
+            ]
+          }
+        },
+        "sample_1": {
+          "sample": {
+            "n": 20543011,
+            "factors": [
+              2389,
+              8599
+            ],
+            "signature": {
+              "4": 2,
+              "5": 0
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 25,
+              "factor_count": 2,
+              "size_variance": 0.0,
+              "min_relative_gap": 2.599413980745082,
+              "gnfs_estimate": 12.25825832483777,
+              "combined_score": 36.66508033323042
+            }
+          },
+          "prompts": [
+            "Factor the number 20543011 into its prime factors.",
+            "Is 20543011 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(20543011) for K = [4, 5].",
+            "Determine whether 20543011 belongs to S(2,[4, 5])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 20543011.",
+              "Based on the digit pattern of 20543011, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 20543011 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 20543011 were used in a cryptographic protocol."
+            ]
+          }
+        },
+        "sample_2": {
+          "sample": {
+            "n": 311576429,
+            "factors": [
+              3923,
+              79423
+            ],
+            "signature": {
+              "4": 1,
+              "5": 1
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 29,
+              "factor_count": 2,
+              "size_variance": 0.25,
+              "min_relative_gap": 19.245475401478462,
+              "gnfs_estimate": 13.272909459426664,
+              "combined_score": 46.377216224791454
+            }
+          },
+          "prompts": [
+            "Factor the number 311576429 into its prime factors.",
+            "Is 311576429 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(311576429) for K = [4, 5].",
+            "Determine whether 311576429 belongs to S(2,[4, 5])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 311576429.",
+              "Based on the digit pattern of 311576429, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 311576429 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 311576429 were used in a cryptographic protocol."
+            ]
+          }
+        },
+        "sample_3": {
+          "sample": {
+            "n": 4349,
+            "factors": [
+              4349
+            ],
+            "signature": {
+              "4": 1,
+              "5": 0
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 13,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 8.47252641526413,
+              "combined_score": 14.18181818181818
+            }
+          },
+          "prompts": [
+            "Factor the number 4349 into its prime factors.",
+            "Is 4349 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(4349) for K = [4, 5].",
+            "Determine whether 4349 belongs to S(1,[4, 5])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 4349.",
+              "Based on the digit pattern of 4349, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 4349 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 4349 were used in a cryptographic protocol."
+            ]
+          }
+        },
+        "sample_4": {
+          "sample": {
+            "n": 3371,
+            "factors": [
+              3371
+            ],
+            "signature": {
+              "4": 1,
+              "5": 0
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 12,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 8.07693184914105,
+              "combined_score": 13.09090909090909
+            }
+          },
+          "prompts": [
+            "Factor the number 3371 into its prime factors.",
+            "Is 3371 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(3371) for K = [4, 5].",
+            "Determine whether 3371 belongs to S(1,[4, 5])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 3371.",
+              "Based on the digit pattern of 3371, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 3371 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 3371 were used in a cryptographic protocol."
+            ]
+          }
+        }
+      }
+    },
+    {
+      "tier_info": {
+        "tier": 8,
+        "N": 3,
+        "K": [
+          5,
+          6
+        ],
+        "description": "Multiple large prime factors",
+        "category": "research",
+        "capabilities": [
+          "advanced_factorization",
+          "mathematical_creativity"
+        ]
+      },
+      "samples": [
+        {
+          "n": 41549614097,
+          "factors": [
+            42071,
+            987607
+          ],
+          "signature": {
+            "5": 1,
+            "6": 1
+          },
+          "factor_count": 2,
+          "difficulty": {
+            "bit_length": 36,
+            "factor_count": 2,
+            "size_variance": 0.25,
+            "min_relative_gap": 22.47476884314611,
+            "gnfs_estimate": 14.869165219377566,
+            "combined_score": 57.52936460615017
+          }
+        },
+        {
+          "n": 101949847230237911,
+          "factors": [
+            117193,
+            876181,
+            992867
+          ],
+          "signature": {
+            "5": 0,
+            "6": 3
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 57,
+            "factor_count": 3,
+            "size_variance": 0.0,
+            "min_relative_gap": 0.13317567945435932,
+            "gnfs_estimate": 18.782082121013385,
+            "combined_score": 141.06703041527382
+          }
+        },
+        {
+          "n": 7155915155902501,
+          "factors": [
+            34141,
+            424163,
+            494147
+          ],
+          "signature": {
+            "5": 1,
+            "6": 2
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 53,
+            "factor_count": 3,
+            "size_variance": 0.22222222222222224,
+            "min_relative_gap": 0.16499317479365244,
+            "gnfs_estimate": 18.111435222464,
+            "combined_score": 140.4895568578316
+          }
+        },
+        {
+          "n": 5465026462514363,
+          "factors": [
+            35291,
+            309223,
+            500791
+          ],
+          "signature": {
+            "5": 1,
+            "6": 2
+          },
+          "factor_count": 3,
+          "difficulty": {
+            "bit_length": 53,
+            "factor_count": 3,
+            "size_variance": 0.22222222222222224,
+            "min_relative_gap": 0.6195140723684849,
+            "gnfs_estimate": 18.111435222464,
+            "combined_score": 116.17457989225113
+          }
+        },
+        {
+          "n": 796267,
+          "factors": [
+            796267
+          ],
+          "signature": {
+            "5": 0,
+            "6": 1
+          },
+          "factor_count": 1,
+          "difficulty": {
+            "bit_length": 20,
+            "factor_count": 1,
+            "size_variance": 0.0,
+            "min_relative_gap": 1.0,
+            "gnfs_estimate": 10.847374017984851,
+            "combined_score": 21.818181818181817
+          }
+        }
+      ],
+      "prompts": {
+        "sample_0": {
+          "sample": {
+            "n": 41549614097,
+            "factors": [
+              42071,
+              987607
+            ],
+            "signature": {
+              "5": 1,
+              "6": 1
+            },
+            "factor_count": 2,
+            "difficulty": {
+              "bit_length": 36,
+              "factor_count": 2,
+              "size_variance": 0.25,
+              "min_relative_gap": 22.47476884314611,
+              "gnfs_estimate": 14.869165219377566,
+              "combined_score": 57.52936460615017
+            }
+          },
+          "prompts": [
+            "Factor the number 41549614097 into its prime factors.",
+            "Is 41549614097 a product of exactly 2 primes? If so, what are they?",
+            "Find the signature \u03c9_K(41549614097) for K = [5, 6].",
+            "Determine whether 41549614097 belongs to S(2,[5, 6])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 41549614097.",
+              "Based on the digit pattern of 41549614097, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 41549614097 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 41549614097 were used in a cryptographic protocol."
+            ]
+          }
+        },
+        "sample_1": {
+          "sample": {
+            "n": 101949847230237911,
+            "factors": [
+              117193,
+              876181,
+              992867
+            ],
+            "signature": {
+              "5": 0,
+              "6": 3
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 57,
+              "factor_count": 3,
+              "size_variance": 0.0,
+              "min_relative_gap": 0.13317567945435932,
+              "gnfs_estimate": 18.782082121013385,
+              "combined_score": 141.06703041527382
+            }
+          },
+          "prompts": [
+            "Factor the number 101949847230237911 into its prime factors.",
+            "Is 101949847230237911 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(101949847230237911) for K = [5, 6].",
+            "Determine whether 101949847230237911 belongs to S(3,[5, 6])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 101949847230237911.",
+              "Based on the digit pattern of 101949847230237911, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 101949847230237911 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 101949847230237911 were used in a cryptographic protocol."
+            ]
+          }
+        },
+        "sample_2": {
+          "sample": {
+            "n": 7155915155902501,
+            "factors": [
+              34141,
+              424163,
+              494147
+            ],
+            "signature": {
+              "5": 1,
+              "6": 2
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 53,
+              "factor_count": 3,
+              "size_variance": 0.22222222222222224,
+              "min_relative_gap": 0.16499317479365244,
+              "gnfs_estimate": 18.111435222464,
+              "combined_score": 140.4895568578316
+            }
+          },
+          "prompts": [
+            "Factor the number 7155915155902501 into its prime factors.",
+            "Is 7155915155902501 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(7155915155902501) for K = [5, 6].",
+            "Determine whether 7155915155902501 belongs to S(3,[5, 6])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 7155915155902501.",
+              "Based on the digit pattern of 7155915155902501, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 7155915155902501 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 7155915155902501 were used in a cryptographic protocol."
+            ]
+          }
+        },
+        "sample_3": {
+          "sample": {
+            "n": 5465026462514363,
+            "factors": [
+              35291,
+              309223,
+              500791
+            ],
+            "signature": {
+              "5": 1,
+              "6": 2
+            },
+            "factor_count": 3,
+            "difficulty": {
+              "bit_length": 53,
+              "factor_count": 3,
+              "size_variance": 0.22222222222222224,
+              "min_relative_gap": 0.6195140723684849,
+              "gnfs_estimate": 18.111435222464,
+              "combined_score": 116.17457989225113
+            }
+          },
+          "prompts": [
+            "Factor the number 5465026462514363 into its prime factors.",
+            "Is 5465026462514363 a product of exactly 3 primes? If so, what are they?",
+            "Find the signature \u03c9_K(5465026462514363) for K = [5, 6].",
+            "Determine whether 5465026462514363 belongs to S(3,[5, 6])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 5465026462514363.",
+              "Based on the digit pattern of 5465026462514363, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 5465026462514363 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 5465026462514363 were used in a cryptographic protocol."
+            ]
+          }
+        },
+        "sample_4": {
+          "sample": {
+            "n": 796267,
+            "factors": [
+              796267
+            ],
+            "signature": {
+              "5": 0,
+              "6": 1
+            },
+            "factor_count": 1,
+            "difficulty": {
+              "bit_length": 20,
+              "factor_count": 1,
+              "size_variance": 0.0,
+              "min_relative_gap": 1.0,
+              "gnfs_estimate": 10.847374017984851,
+              "combined_score": 21.818181818181817
+            }
+          },
+          "prompts": [
+            "Factor the number 796267 into its prime factors.",
+            "Is 796267 a product of exactly 1 primes? If so, what are they?",
+            "Find the signature \u03c9_K(796267) for K = [5, 6].",
+            "Determine whether 796267 belongs to S(1,[5, 6])."
+          ],
+          "capability_prompts": {
+            "mathematical_insight": [
+              "Without directly computing the factors, explain the most efficient strategy to factorize 796267.",
+              "Based on the digit pattern of 796267, what properties can you infer about its prime factorization?"
+            ],
+            "cryptographic_reasoning": [
+              "If 796267 were used as an RSA modulus, estimate how long it would take to break with current technology.",
+              "Analyze the security implications if 796267 were used in a cryptographic protocol."
+            ]
+          }
+        }
+      }
+    }
+  ]
+}
