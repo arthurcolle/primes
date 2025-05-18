@@ -1,0 +1,37 @@
+{
+  "total": 10,
+  "successful": 10,
+  "failed": 0,
+  "tiers": {
+    "2": {
+      "total": 1,
+      "successful": 1,
+      "failed": 0
+    },
+    "4": {
+      "total": 3,
+      "successful": 3,
+      "failed": 0
+    },
+    "1": {
+      "total": 3,
+      "successful": 3,
+      "failed": 0
+    },
+    "3": {
+      "total": 1,
+      "successful": 1,
+      "failed": 0
+    },
+    "0": {
+      "total": 2,
+      "successful": 2,
+      "failed": 0
+    }
+  },
+  "timing": {
+    "start": 1747537456.349867,
+    "end": 1747537458.729846,
+    "total_seconds": 2.379978895187378
+  }
+}

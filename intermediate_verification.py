@@ -595,6 +595,7 @@ class IntermediateVerificationSystem:
             RemainderVerifier(),
             AlgorithmicConsistencyVerifier()
         ]
+        self.verification_history = []
     
     def verify_step(self, step: Dict[str, Any], context: Dict[str, Any]) -> Dict[str, Any]:
         """
@@ -707,8 +708,10 @@ class IntermediateVerificationSystem:
         # Create context with the original number
         context = {"number": number}
         
-        # Verify the step
-        return self.verify_step(step, context)
+        # Verify the step and convert overall_status to status for consistency
+        result = self.verify_step(step, context)
+        result["status"] = result["overall_status"]
+        return result
     
     def get_verification_summary(self) -> Dict[str, Any]:
         """
