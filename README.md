@@ -1,55 +1,48 @@
-# Digit-Class Prime Product Framework (Prime Factorization Evals for LMs) 
+# Prime Factorization Framework for AI Evaluation
 
-This repository contains analysis tools and benchmarking utilities for exploring the S(N,K) digit-class prime product problem and its applications to AI evaluation.
+A comprehensive toolkit for generating, analyzing, and benchmarking prime factorization challenges with precise complexity control, designed for evaluating mathematical reasoning in AI systems.
 
-## Core Concept
+## 🔍 Core Concept: The S(N,K) Framework
 
-The S(N,K) framework classifies integers based on their prime factorization patterns, where:
+The S(N,K) digit-class prime product framework provides a rigorous mathematical foundation for creating factorization problems with controlled difficulty:
 
-- **N**: Maximum number of prime factors
-- **K**: Set of allowed digit-lengths for primes
+- **N**: Maximum number of prime factors allowed
+- **K**: Set of allowed digit-lengths for prime factors
 - **S(N,K)**: Set of integers expressible as products of at most N primes, each with digit-length in K
 
-This framework provides a controllable "difficulty dial" for creating reasoning problems with precise complexity characteristics.
+This enables creation of problems with precise complexity characteristics across multiple dimensions:
+- Computational complexity (bit-length)
+- Working memory requirements (factor count)
+- Search space magnitude (digit classes)
+- Distribution variance (signature entropy)
 
-## Repository Contents
+## 🛠️ Key Components
 
-- `gen_dataset.py`: Original script to generate prime factorization dataset
-- `digit_class_analysis.py`: Implementation of S(N,K) framework with analysis tools
-- `analytic_framework.md`: Detailed mathematical analysis of S(N,K) properties
-- `ai_reasoning_evaluation.md`: Framework for using S(N,K) in AI benchmarking
-- `novel_extensions.md`: Advanced extensions to the basic framework
-- `data/`: Pre-generated datasets
+- **Advanced Prime Generation**: Parallel, segmented sieving with caching for primes up to 10^12+
+- **S(N,K) Sample Generation**: Generate integers with specified factorization properties
+- **Quantum-Resistant Challenges**: Multi-factor challenges resistant to Shor's algorithm
+- **Tiered Benchmarks**: 17 difficulty tiers from elementary to cryptographic-strength
+- **Comprehensive Evaluation**: Metrics spanning basic arithmetic to advanced factorization algorithms
+- **Machine Learning Integration**: Export in multiple ML-friendly formats (JSONL, Parquet, HuggingFace)
 
-## Analysis Tools
+## 🚀 Usage Examples
 
-The `digit_class_analysis.py` module provides:
-
-1. Prime generation and classification utilities
-2. S(N,K) sample generation with parameterized difficulty
-3. Analytic approximations of S(N,K) properties
-4. Difficulty measurement and calibration
-5. Benchmark prompt generation
-6. Lattice-theoretic analysis functions
-
-## Usage
-
-Basic usage example:
+### Basic Usage
 
 ```python
 from digit_class_analysis import generate_primes, classify_primes_by_digits, generate_S_N_K_samples
 
-# Generate prime base
+# Generate and classify primes
 primes = generate_primes(100000)
 classified = classify_primes_by_digits(primes)
 
 # Generate samples from S(3, [1, 2])
 samples = generate_S_N_K_samples(
-    N=3,               # Maximum 3 prime factors
-    K=[1, 2],          # Using 1 and 2-digit primes
+    N=3,                # Maximum 3 prime factors
+    K=[1, 2],           # Using 1 and 2-digit primes
     classified_primes=classified,
-    sample_count=100,  # Generate 100 samples
-    max_value=10**9    # Up to 1 billion
+    sample_count=100,   # Generate 100 samples
+    max_value=10**9     # Up to 1 billion
 )
 
 # Analyze samples
@@ -60,61 +53,94 @@ for sample in samples[:5]:
     print()
 ```
 
-## Benchmark Generation
-
-To create a complete benchmark dataset:
+### Generate a Benchmark Dataset
 
 ```bash
-python digit_class_analysis.py --benchmark --limit 1000000 --output benchmark.json
+python digit_class_analysis.py --benchmark --limit 1000000 --output benchmark.json --ml-export
 ```
 
-## Mathematical Framework
+### Generate Extreme Quantum-Resistant Challenge Set
 
-See `analytic_framework.md` for in-depth mathematical analysis of:
+```bash
+python gen_massive_primes.py --samples_per_tier 1000 --workers 8
+```
 
-- Algebraic structure (multigraded monoid perspective)
-- Analytic properties (colored zeta functions)
-- Probabilistic aspects (digit-conditioned Erdős-Kac phenomenon)
-- Complexity dimensions
+### Using DSPy GRPO for Prime Factorization
 
-## AI Evaluation Framework
+```bash
+python prime_dspy_grpo.py --model "Qwen/Qwen2.5-7B-Instruct" --train_steps 100 --hops 3
+```
 
-See `ai_reasoning_evaluation.md` for detailed exploration of:
+## 📊 Benchmark Structure
 
-- Cognitive skills assessment dimensions
-- Evaluation protocols
-- Chain-of-thought analysis
-- Progressive difficulty curriculum
-- Implementation frameworks
+The benchmark includes diverse tiers of increasing difficulty:
 
-## Advanced Extensions
+| Tier | Configuration | Description | Category |
+|------|--------------|-------------|----------|
+| 0-4  | Basic S(N,K) with small N,K | Elementary factorization | Elementary |
+| 5-9  | Complex S(N,K) combinations | Medium-to-advanced factorization | Intermediate/Advanced |
+| 10-12 | Quantum-resistant challenges | Cryptographic-strength factorization (2048-4096 bit) | Cryptographic |
+| 13-16 | Massive primes & near-primes | Extreme factorization challenges | Extreme |
 
-See `novel_extensions.md` for cutting-edge extensions including:
+## 🧠 Mathematical Framework
 
-- Multivariate classification metrics
-- Dynamic constraint systems
-- Topological perspectives
-- Information-theoretic frameworks
-- Quantum-inspired approaches
-- Game-theoretic models
+The framework connects to multiple mathematical disciplines:
 
-## Development
+- **Analytic Number Theory**: Colored zeta functions, asymptotic density formulas
+- **Algebraic Geometry**: S(N,K) as rational points on algebraic schemes 
+- **Category Theory**: Monoidal categories of factorizations, topos-theoretic structures
+- **Information Theory**: Signature entropy, factorization complexity
+- **Quantum Computing**: Enhanced Shor's algorithm with digit-class constraints
+- **Lattice Theory**: Signature vector spaces, distance metrics between factorizations
 
-To contribute or extend this framework:
+## 🤖 AI Evaluation Capabilities
+
+Systematically evaluates multiple reasoning dimensions:
+
+- **Decomposition Skills**: Breaking problems into manageable parts
+- **Number-Theoretic Reasoning**: Understanding divisibility and number patterns
+- **Metacognitive Awareness**: Strategy switching and progress monitoring
+- **Tool-Use Sophistication**: Appropriate application of mathematical tools
+- **Algorithmic Reasoning**: Selecting and applying efficient factorization approaches
+
+## 📚 Resources
+
+The repository includes extensive documentation:
+
+- **analytic_framework.md**: Deep mathematical analysis of S(N,K) properties
+- **ai_reasoning_evaluation.md**: Framework for AI benchmarking with S(N,K)
+- **novel_extensions.md**: Advanced extensions to the basic framework
+- **quantum_algorithms.md**: Quantum approaches to S(N,K) problems
+- **category_theory.md**: Category-theoretic foundations of factorization
+- **extreme_benchmark_readme.md**: Guide to extreme challenge benchmarks
+
+## 🔬 Advanced Research Applications
+
+- **Cryptography**: Quantum-resistant factorization challenges
+- **AI Training**: Progressive difficulty curriculum for mathematical reasoning
+- **Number Theory**: Exploring distributions of factorization patterns
+- **Educational Technology**: Cognitive scaffolding with controlled complexity
+- **Quantum Computing**: Testing factorization approaches on quantum simulators
+
+## ⚙️ Development
+
+To contribute:
 
 1. Fork the repository
 2. Create a feature branch
-3. Implement your extension
+3. Implement your extension or enhancement
 4. Submit a pull request with detailed description
 
-## References
+## 📋 References
 
 - Erdős–Kac theorem
 - Analytic number theory
 - Lattice point enumeration
 - Multigraded monoids
 - AI reasoning evaluation
+- GNFS (General Number Field Sieve)
+- GRPO (Group Relative Policy Optimization)
 
-## License
+## 📄 License
 
 MIT License - See LICENSE file for details
