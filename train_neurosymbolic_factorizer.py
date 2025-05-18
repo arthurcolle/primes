@@ -357,8 +357,8 @@ def train_model(trainer: OpenAIFactorizationTrainer,
     # Extract results
     results = {
         'job_id': job_id,
-        'status': job_result.get('status', 'unknown'),
-        'model_id': job_result.get('fine_tuned_model', None),
+        'status': getattr(job_result, 'status', 'unknown'),
+        'model_id': getattr(job_result, 'fine_tuned_model', None),
         'elapsed_time': None,
         'train_loss': None,
         'val_loss': None
@@ -366,8 +366,14 @@ def train_model(trainer: OpenAIFactorizationTrainer,
     
     # Extract training metrics if available
     if hasattr(job_result, 'training_metrics'):
-        results['train_loss'] = job_result.training_metrics.get('avg_train_reward')
-        results['val_loss'] = job_result.training_metrics.get('avg_valid_reward')
+        metrics = job_result.training_metrics
+        if isinstance(metrics, dict):
+            results['train_loss'] = metrics.get('avg_train_reward')
+            results['val_loss'] = metrics.get('avg_valid_reward')
+        else:
+            # Handle the case where training_metrics is an object
+            results['train_loss'] = getattr(metrics, 'avg_train_reward', None)
+            results['val_loss'] = getattr(metrics, 'avg_valid_reward', None)
     
     # Extract timing info
     if hasattr(job_result, 'created_at') and hasattr(job_result, 'finished_at'):

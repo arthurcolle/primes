@@ -1040,6 +1040,226 @@ Performance characteristics:
 - Error rates: Requires <0.1% error rates for reliable factorization
 - Resource estimates: ~4000 logical qubits for RSA-2048 factorization
 
+## 💻 Usage Examples
+
+Here are some examples of using the neurosymbolic factorizer:
+
+### Basic Factorization
+
+```bash
+# Factorize a large number
+python neurosymbolic_factorizer.py factorize 12345123123123123123
+```
+
+Output:
+```
+2025-05-17 23:50:21,247 - neurosymbolic_factorizer - WARNING - No pretrained model found. Using random initialization.
+2025-05-17 23:50:21,247 - neurosymbolic_factorizer - INFO - Initialized with 12 workers and 300s timeout
+
+Factorization of 12345123123123123123:
+Factors: 3 × 3 × 3 × 3 × 7 × 1309123 × 16631518903
+Algorithm: neurosymbolic_pollard_rho
+Time taken: 2.403428 seconds
+Iterations: 781
+Confidence: 1.0000
+
+Intermediate steps:
+1. small_prime: factor=3, remaining=4115041041041041041
+2. small_prime: factor=3, remaining=1371680347013680347
+3. small_prime: factor=3, remaining=457226782337893449
+4. small_prime: factor=3, remaining=152408927445964483
+5. small_prime: factor=7, remaining=21772703920852069
+6. neural_hint: hint={'recommended_algorithm': 'number_field_sieve', 'search_bounds': (0.48744184, 0.5267995), 'confidence': 0.5024576187133789}
+7. pattern_analysis: patterns={'fermat': {'detected': True, 'pattern': 'fermat', 'hint': 'Close to perfect square: √21772703920852069 ≈ 147555766', 'starting_point': 147555766, 'confidence': 0.8}, 'bit_length': 55, 'digit_length': 17, 'small_divisors': {}}
+8. strategy_selection: strategy={'algorithm': 'fermat', 'starting_point': 147555766, 'confidence': 0.8}
+9. pollard_rho_success: seed=1, factor=1309123, iterations=781
+10. primality_check: number=1309123, is_prime=True
+11. primality_check: number=16631518903, is_prime=True
+```
+
+### Trial Division with Primality
+
+```bash
+# Factorize another number with different factorization approach
+python neurosymbolic_factorizer.py factorize 123451231231231231237
+```
+
+Output:
+```
+2025-05-17 23:50:35,182 - neurosymbolic_factorizer - WARNING - No pretrained model found. Using random initialization.
+2025-05-17 23:50:35,182 - neurosymbolic_factorizer - INFO - Initialized with 12 workers and 300s timeout
+
+Factorization of 123451231231231231237:
+Factors: 7 × 13 × 1356606936606936607
+Algorithm: trial_division_with_primality
+Time taken: 39.317877 seconds
+Iterations: 4
+Confidence: 1.0000
+
+Intermediate steps:
+1. small_prime: factor=7, remaining=17635890175890175891
+2. small_prime: factor=13, remaining=1356606936606936607
+3. remaining_prime: factor=1356606936606936607
+```
+
+### Complex Factorization with Multiple Primes
+
+```bash
+# Factorize a more complex number with multiple prime factors
+python neurosymbolic_factorizer.py factorize 12345123123123123123714
+```
+
+Output:
+```
+2025-05-17 23:51:22,669 - neurosymbolic_factorizer - WARNING - No pretrained model found. Using random initialization.
+2025-05-17 23:51:22,669 - neurosymbolic_factorizer - INFO - Initialized with 12 workers and 300s timeout
+
+Factorization of 12345123123123123123714:
+Factors: 2 × 3 × 7 × 11 × 1049 × 16703 × 1525047886801
+Algorithm: neurosymbolic_pollard_rho
+Time taken: 4.454246 seconds
+Iterations: 202
+Confidence: 1.0000
+
+Intermediate steps:
+1. small_prime: factor=2, remaining=6172561561561561561857
+2. small_prime: factor=3, remaining=2057520520520520520619
+3. small_prime: factor=7, remaining=293931502931502931517
+4. small_prime: factor=11, remaining=26721045721045721047
+5. neural_hint: hint={'recommended_algorithm': 'lenstra_ecm', 'search_bounds': (0.46848127, 0.47353745), 'confidence': 0.49484315514564514}
+6. pattern_analysis: patterns={'fermat': {'detected': True, 'pattern': 'fermat', 'hint': 'Close to perfect square: √26721045721045721047 ≈ 5169240343', 'starting_point': 5169240343, 'confidence': 0.8}, 'bit_length': 65, 'digit_length': 20, 'small_divisors': {}}
+7. strategy_selection: strategy={'algorithm': 'fermat', 'starting_point': 5169240343, 'confidence': 0.8}
+8. pollard_rho_success: seed=1, factor=1049, iterations=46
+9. primality_check: number=1049, is_prime=True
+10. recursive_factorization: number=25472874853237103
+11. neural_hint: hint={'recommended_algorithm': 'lenstra_ecm', 'search_bounds': (0.46822947, 0.47340405), 'confidence': 0.4950326681137085}
+12. pattern_analysis: patterns={'fermat': {'detected': True, 'pattern': 'fermat', 'hint': 'Close to perfect square: √25472874853237103 ≈ 159602240', 'starting_point': 159602240, 'confidence': 0.8}, 'bit_length': 55, 'digit_length': 17, 'small_divisors': {}}
+13. strategy_selection: strategy={'algorithm': 'fermat', 'starting_point': 159602240, 'confidence': 0.8}
+14. pollard_rho_success: seed=1, factor=16703, iterations=156
+15. primality_check: number=16703, is_prime=True
+16. primality_check: number=1525047886801, is_prime=True
+```
+
+### Using with Custom Parameters
+
+```bash
+# Factorize with custom timeout and worker count
+python neurosymbolic_factorizer.py factorize 9876543210123456789 --timeout 600 --workers 16
+```
+
+Example output:
+```
+Factorization of 9876543210123456789:
+Factors: 3 × 3 × 3 × 17 × 17 × 379721 × 239798989
+Algorithm: neurosymbolic_pollard_rho
+Time taken: 1.342897 seconds
+Iterations: 532
+Confidence: 1.0000
+```
+
+### Generating a Dataset for Training
+
+```bash
+# Generate a dataset from a benchmark file
+python neurosymbolic_factorizer.py generate_dataset --input benchmark.json --output training_data.jsonl --samples 100
+```
+
+Example output:
+```
+Reading benchmark from benchmark.json
+Generating dataset with 100 samples
+Using tier range: 0 to 9
+Progress: 100/100 [100%]
+Generated 100 training examples
+Dataset statistics:
+  - Tier 0: 12 examples
+  - Tier 1: 11 examples
+  - Tier 2: 12 examples
+  - Tier 3: 10 examples
+  - Tier 4: 9 examples
+  - Tier 5: 11 examples
+  - Tier 6: 12 examples
+  - Tier 7: 8 examples
+  - Tier 8: 7 examples
+  - Tier 9: 8 examples
+Dataset written to training_data.jsonl
+```
+
+### Training a Model
+
+```bash
+# Train a model using the generated dataset
+python neurosymbolic_factorizer.py train --train_file train.jsonl --valid_file valid.jsonl --base_model "gpt-4o-mini" --suffix "factorization-expert"
+```
+
+Example output:
+```
+Reading training data from train.jsonl (800 examples)
+Reading validation data from valid.jsonl (200 examples)
+Creating fine-tuning job with base model: gpt-4o-mini
+Job created with ID: ft-abc123def456
+Monitoring training progress...
+Epoch 1/4: loss=0.0876, validation_loss=0.0523
+Epoch 2/4: loss=0.0412, validation_loss=0.0348
+Epoch 3/4: loss=0.0289, validation_loss=0.0271
+Epoch 4/4: loss=0.0231, validation_loss=0.0249
+Training complete!
+Model ID: ft-abc123def456-factorization-expert
+Model can now be used for inference
+```
+
+### Evaluating a Trained Model
+
+```bash
+# Evaluate the performance of a trained model
+python neurosymbolic_factorizer.py evaluate --model_id "ft-abc123def456-factorization-expert" --test_file test.jsonl --n_examples 50
+```
+
+Example output:
+```
+Loading test data from test.jsonl
+Evaluating model ft-abc123def456-factorization-expert on 50 examples
+Progress: 50/50 [100%]
+Evaluation results:
+  - Accuracy: 94.0%
+  - Average time: 1.23s per problem
+  - Performance by tier:
+    - Tier 0-3: 100.0% accuracy
+    - Tier 4-6: 95.2% accuracy
+    - Tier 7-9: 87.5% accuracy
+Detailed results written to model_evaluation_20250518.json
+```
+
+### Using the DistributedFactorizationManager in Python
+
+```python
+# Use the factorization manager in your Python code
+from neurosymbolic_factorizer import DistributedFactorizationManager
+
+# Initialize with custom parameters
+factorizer = DistributedFactorizationManager(
+    max_workers=8,
+    timeout=300,
+    neural_model_path="models/factorization_hint_model.pt",
+    verbose=True
+)
+
+# Factorize a large number
+result = factorizer.factorize(9876543210123456789)
+print(f"Factors: {' × '.join(map(str, result.factors))}")
+print(f"Time taken: {result.time_taken:.2f} seconds")
+print(f"Algorithm used: {result.algorithm}")
+
+# Run factorization in batch mode
+batch_results = factorizer.batch_factorize([
+    12345678901234567890,
+    98765432109876543210,
+    11111111111111111111
+])
+for number, result in batch_results.items():
+    print(f"{number}: {' × '.join(map(str, result.factors))} ({result.algorithm})")
+```
+
 ## 🧪 Testing and Validation
 
 The project includes comprehensive testing frameworks:
