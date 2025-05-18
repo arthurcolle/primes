@@ -1,4 +1,4 @@
-# Digit-Class Prime Product Framework
+# Digit-Class Prime Product Framework (Prime Factorization Evals for LMs) 
 
 This repository contains analysis tools and benchmarking utilities for exploring the S(N,K) digit-class prime product problem and its applications to AI evaluation.
 
