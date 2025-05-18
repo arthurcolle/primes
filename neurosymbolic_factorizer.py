@@ -1,4 +1,4 @@
-gi#!/usr/bin/env python3
+#!/usr/bin/env python3
 """
 neurosymbolic_factorizer.py
 
@@ -1335,7 +1335,7 @@ class OpenAIFactorizationTrainer:
         logger.info(f"Prepared {len(train_examples)} training and {len(valid_examples)} validation examples")
         return train_path, valid_path
     
-    def train_model(self, train_file: str, valid_file: str, base_model: str = "gpt-3.5-turbo",
+    def train_model(self, train_file: str, valid_file: str, base_model: str = "o4-mini-2025-04-16",
                    suffix: Optional[str] = None, batch_size: int = 4,
                    learning_rate_multiplier: float = 0.1, n_epochs: int = 3) -> str:
         """
@@ -1390,24 +1390,46 @@ class OpenAIFactorizationTrainer:
             
         # Create fine-tuning job
         try:
-            # First try standard supervised fine-tuning
-            job_response = client.fine_tuning.jobs.create(
-                training_file=train_file_id,
-                validation_file=valid_file_id,
-                model=base_model,
-                suffix=suffix,
-                hyperparameters=hyperparameters
-            )
-            logger.info("Created supervised fine-tuning job")
-        except Exception as e:
-            logger.warning(f"Supervised fine-tuning failed: {e}")
-            logger.info("Attempting to create with default parameters")
+            # Check if model supports DPO
+            dpo_supported_models = ["gpt-4o-2024-08-06"]
             
-            # Try with minimal parameters
+            if base_model in dpo_supported_models:
+                # Use direct preference optimization (DPO) fine-tuning
+                job_response = client.fine_tuning.jobs.create(
+                    training_file=train_file_id,
+                    validation_file=valid_file_id,
+                    model=base_model,
+                    suffix=suffix,
+                    hyperparameters=hyperparameters,
+                    method={
+                        "type": "dpo",
+                        "dpo": {
+                            "hyperparameters": {
+                                "beta": 0.1
+                            }
+                        }
+                    }
+                )
+                logger.info("Created DPO fine-tuning job")
+            else:
+                # Use supervised fine-tuning for other models
+                job_response = client.fine_tuning.jobs.create(
+                    training_file=train_file_id,
+                    validation_file=valid_file_id,
+                    model="gpt-4o-mini-2024-07-18",  # Use a supported model for SFT
+                    suffix=suffix,
+                    hyperparameters=hyperparameters
+                )
+                logger.info(f"Created supervised fine-tuning job (original model {base_model} not supported)")
+        except Exception as e:
+            logger.warning(f"Fine-tuning failed: {e}")
+            logger.info("Attempting to create with minimal parameters")
+            
+            # Try with minimal parameters on a known supported model
             job_response = client.fine_tuning.jobs.create(
                 training_file=train_file_id,
                 validation_file=valid_file_id,
-                model=base_model,
+                model="gpt-4o-mini-2024-07-18",  # Use a supported model as fallback
                 suffix=suffix
             )
             logger.info("Created fine-tuning job with default parameters")
@@ -1632,7 +1654,7 @@ def main():
     train_parser = subparsers.add_parser("train", help="Train a model")
     train_parser.add_argument("train_file", type=str, help="Training data file")
     train_parser.add_argument("valid_file", type=str, help="Validation data file")
-    train_parser.add_argument("--base_model", type=str, default="gpt-4o", help="Base model")
+    train_parser.add_argument("--base_model", type=str, default="o4-mini", help="Base model (options: o4-mini, gpt-3.5-turbo, gpt-4o, etc.)")
     train_parser.add_argument("--suffix", type=str, default=None, help="Model name suffix")
     
     # Evaluate command

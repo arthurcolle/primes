@@ -448,8 +448,8 @@ def main():
                        help="Maximum tier level to include (None for all)")
     
     # Training arguments
-    parser.add_argument("--base_model", type=str, default="gpt-3.5-turbo",
-                       help="Base model for fine-tuning")
+    parser.add_argument("--base_model", type=str, default="gpt-4o-mini-2024-07-18",
+                       help="Base model for fine-tuning (options: gpt-4o-mini-2024-07-18, gpt-4o-2024-08-06, etc.)")
     parser.add_argument("--model_suffix", type=str, default="factorization-expert",
                        help="Suffix for the fine-tuned model name")
     parser.add_argument("--eval_examples", type=int, default=5,

@@ -286,12 +286,12 @@ class FactorizationRFTTrainer:
     Reinforcement fine-tuning trainer for factorization models.
     """
     
-    def __init__(self, base_model: str = "o4-mini"):
+    def __init__(self, base_model: str = "o4-mini-2025-04-16"):
         """
         Initialize the trainer.
         
         Args:
-            base_model: Base model to fine-tune
+            base_model: Base model to fine-tune (default: o4-mini-2025-04-16)
         """
         self.base_model = base_model
         self.api = OpenAIAPI()
@@ -305,206 +305,210 @@ class FactorizationRFTTrainer:
         Load the JSON schema for factorization output.
         
         Returns:
-            JSON schema configuration
+            JSON schema configuration formatted for o4-mini
         """
-        # Structured output schema for factorization
+        # Structured output schema for factorization, specifically formatted for o4-mini
         return {
-            "name": "prime_factorization",
-            "strict": True,
-            "schema": {
-                "type": "object",
-                "properties": {
-                    "factors": {
-                        "type": "array",
-                        "items": {"type": "integer"},
-                        "description": "List of prime factors"
+            "type": "json_schema",
+            "json_schema": {
+                "name": "prime_factorization",
+                "strict": True,
+                "schema": {
+                    "type": "object",
+                    "properties": {
+                        "factors": {
+                            "type": "array",
+                            "items": {"type": "integer"},
+                            "description": "List of prime factors"
+                        },
+                        "algorithm": {
+                            "type": "string",
+                            "description": "Algorithm used for factorization"
+                        },
+                        "reasoning": {
+                            "type": "array",
+                            "items": {"type": "string"},
+                            "description": "Step-by-step reasoning process"
+                        },
+                        "time_taken": {
+                            "type": "number",
+                            "description": "Time taken for factorization in seconds"
+                        },
+                        "confidence": {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1,
+                            "description": "Confidence in the factorization (0-1)"
+                        }
                     },
-                    "algorithm": {
-                        "type": "string",
-                        "description": "Algorithm used for factorization"
-                    },
-                    "reasoning": {
-                        "type": "array",
-                        "items": {"type": "string"},
-                        "description": "Step-by-step reasoning process"
-                    },
-                    "time_taken": {
-                        "type": "number",
-                        "description": "Time taken for factorization in seconds"
-                    },
-                    "confidence": {
-                        "type": "number",
-                        "minimum": 0,
-                        "maximum": 1,
-                        "description": "Confidence in the factorization (0-1)"
-                    }
-                },
-                "required": ["factors", "algorithm", "reasoning"],
-                "additionalProperties": False
+                    "required": ["factors", "algorithm", "reasoning"],
+                    "additionalProperties": False
+                }
             }
         }
     
     def _load_grader_config(self) -> Dict[str, Any]:
         """
-        Load the grader configuration for RFT.
+        Load the grader configuration for RFT with o4-mini.
         
         Returns:
-            Grader configuration
+            Grader configuration optimized for o4-mini
         """
-        # Simplified version of the Python grader from prime_reinforcement_grader.py
+        # Multi-component grader configuration for o4-mini
         return {
-            "type": "python",
-            "python": {
-                "fn": """
+            "type": "multi",
+            "graders": {
+                "correctness": {
+                    "name": "Factorization Correctness",
+                    "type": "python",
+                    "python": {
+                        "fn": """
 def grade(item, sample):
-    # Extract model output and reference data
     try:
+        # Extract model output and reference data
         model_output = sample.get("output_json", {})
         
-        # Extract reference data
-        reference_data = {
-            "number": item["number"],
-            "factors": item["factors"],
-            "optimal_algorithm": item.get("optimal_algorithm"),
-            "expected_time": item.get("expected_time")
+        # Grade correctness of factorization
+        predicted_factors = model_output.get("factors", [])
+        number = item["number"]
+        true_factors = item["factors"]
+        
+        if not predicted_factors:
+            return 0.0
+        
+        # Check if product equals the original number
+        product = 1
+        for factor in predicted_factors:
+            product *= factor
+        
+        if product != number:
+            return 0.0
+        
+        # Check if all predicted factors match reference
+        predicted_sorted = sorted(predicted_factors)
+        reference_sorted = sorted(true_factors)
+        
+        if predicted_sorted == reference_sorted:
+            return 1.0
+        
+        # Partial credit for some correct factors
+        correct_factors = [f for f in predicted_sorted if f in reference_sorted]
+        return len(correct_factors) / len(reference_sorted)
+    except Exception as e:
+        print(f"Grading error in correctness: {e}")
+        return 0.0
+                        """
+                    }
+                },
+                "algorithm": {
+                    "name": "Algorithm Selection",
+                    "type": "python",
+                    "python": {
+                        "fn": """
+def grade(item, sample):
+    try:
+        # Extract model output and reference data
+        model_output = sample.get("output_json", {})
+        algorithm_used = model_output.get("algorithm", "Unknown")
+        optimal_algorithm = item.get("optimal_algorithm")
+        number = item["number"]
+        
+        if optimal_algorithm:
+            return 1.0 if algorithm_used == optimal_algorithm else 0.0
+        
+        # Simple algorithm preferences based on bit length
+        bit_length = len(bin(number)) - 2
+        
+        algorithm_preferences = {
+            "TrialDivision": {"max_bits": 32, "score": 1.0},
+            "WheelFactorization": {"max_bits": 64, "score": 1.0},
+            "PollardRho": {"max_bits": 128, "score": 1.0},
+            "ECM": {"max_bits": 256, "score": 1.0},
+            "QuadraticSieve": {"max_bits": 512, "score": 1.0},
+            "GNFS": {"max_bits": float('inf'), "score": 1.0}
         }
         
-        # Grade the output
-        overall_score = grade_factorization(model_output, reference_data)
-        return overall_score
+        for algo, prefs in algorithm_preferences.items():
+            if algorithm_used == algo and bit_length <= prefs["max_bits"]:
+                return prefs["score"]
+        
+        return 0.1
     except Exception as e:
-        print(f"Grading error: {e}")
-        return 0.0
+        print(f"Grading error in algorithm: {e}")
+        return 0.1
+                        """
+                    }
+                },
+                "reasoning": {
+                    "name": "Reasoning Quality",
+                    "type": "score_model",
+                    "input": [
+                        {
+                            "role": "user",
+                            "type": "message",
+                            "content": """
+Evaluate the quality of reasoning in this prime factorization attempt. Focus on:
+1. Logical progression of steps
+2. Appropriate level of detail
+3. Mathematical correctness
+4. Efficiency of approach
 
-def grade_factorization(output, reference):
-    # Check correctness
-    correctness = grade_correctness(output.get("factors", []), reference["number"], reference["factors"])
-    
-    # Check efficiency
-    efficiency = grade_efficiency(
-        output.get("time_taken", 0.0),
-        reference.get("expected_time"),
-        reference["number"]
-    )
-    
-    # Check algorithm selection
-    algorithm_score = grade_algorithm(
-        output.get("algorithm", "Unknown"),
-        reference.get("optimal_algorithm"),
-        reference["number"]
-    )
-    
-    # Check reasoning quality
-    reasoning_score = grade_reasoning(
-        output.get("reasoning", []),
-        output.get("algorithm", "Unknown"),
-        reference["number"]
-    )
-    
-    # Combine scores with weights
-    weights = {
-        "correctness": 3.0,
-        "efficiency": 1.0,
-        "algorithm": 1.0,
-        "reasoning": 1.0
-    }
-    
-    total_weight = sum(weights.values())
-    weighted_sum = (
-        correctness * weights["correctness"] +
-        efficiency * weights["efficiency"] +
-        algorithm_score * weights["algorithm"] +
-        reasoning_score * weights["reasoning"]
-    )
-    
-    return weighted_sum / total_weight
+Score on a scale from 0.0 to 1.0, where:
+- 0.0: Completely incorrect or missing reasoning
+- 0.25: Poor reasoning with major errors
+- 0.5: Basic reasoning with some errors or inefficiencies
+- 0.75: Good reasoning with minor issues
+- 1.0: Excellent, mathematically sound reasoning
 
-def grade_correctness(predicted_factors, number, true_factors):
-    if not predicted_factors:
-        return 0.0
-    
-    # Check if product equals the original number
-    product = 1
-    for factor in predicted_factors:
-        product *= factor
-    
-    if product != number:
-        return 0.0
-    
-    # Check if all predicted factors match reference
-    predicted_sorted = sorted(predicted_factors)
-    reference_sorted = sorted(true_factors)
-    
-    if predicted_sorted == reference_sorted:
-        return 1.0
-    
-    # Partial credit for some correct factors
-    correct_factors = [f for f in predicted_sorted if f in reference_sorted]
-    return len(correct_factors) / len(reference_sorted)
+Number to factorize: {{item.number}}
+True factors: {{item.factors}}
+Algorithm used: {{sample.output_json.algorithm}}
+Reasoning steps:
+{{sample.output_json.reasoning}}
 
-def grade_efficiency(time_taken, expected_time, number):
-    if not time_taken or time_taken <= 0:
+Provide ONLY a single floating point score between 0.0 and 1.0.
+                            """
+                        }
+                    ],
+                    "model": "gpt-4o-2024-08-06"
+                },
+                "efficiency": {
+                    "name": "Efficiency",
+                    "type": "python",
+                    "python": {
+                        "fn": """
+def grade(item, sample):
+    try:
+        # Extract model output and reference data
+        model_output = sample.get("output_json", {})
+        time_taken = model_output.get("time_taken", 0.0)
+        expected_time = item.get("expected_time")
+        number = item["number"]
+        
+        if not time_taken or time_taken <= 0:
+            return 0.0
+        
+        if expected_time and expected_time > 0:
+            return min(expected_time / time_taken, 1.0)
+        
+        # Normalize by bit length
+        bit_length = len(bin(number)) - 2
+        time_threshold = 10.0 * (1 + 0.1 * bit_length)
+        return max(0, 1 - (time_taken / time_threshold))
+    except Exception as e:
+        print(f"Grading error in efficiency: {e}")
         return 0.0
-    
-    if expected_time and expected_time > 0:
-        return min(expected_time / time_taken, 1.0)
-    
-    # Normalize by bit length
-    bit_length = len(bin(number)) - 2
-    time_threshold = 10.0 * (1 + 0.1 * bit_length)
-    return max(0, 1 - (time_taken / time_threshold))
-
-def grade_algorithm(algorithm_used, optimal_algorithm, number):
-    if optimal_algorithm:
-        return 1.0 if algorithm_used == optimal_algorithm else 0.0
-    
-    # Simple algorithm preferences based on bit length
-    bit_length = len(bin(number)) - 2
-    
-    algorithm_preferences = {
-        "TrialDivision": {"max_bits": 32, "score": 1.0},
-        "WheelFactorization": {"max_bits": 64, "score": 1.0},
-        "PollardRho": {"max_bits": 128, "score": 1.0},
-        "ECM": {"max_bits": 256, "score": 1.0},
-        "QuadraticSieve": {"max_bits": 512, "score": 1.0},
-        "GNFS": {"max_bits": float('inf'), "score": 1.0}
-    }
-    
-    for algo, prefs in algorithm_preferences.items():
-        if algorithm_used == algo and bit_length <= prefs["max_bits"]:
-            return prefs["score"]
-    
-    return 0.1
-
-def grade_reasoning(reasoning_steps, algorithm, number):
-    if not reasoning_steps:
-        return 0.0
-    
-    # Expected step count based on algorithm or bit length
-    bit_length = len(bin(number)) - 2
-    expected_steps = max(3, min(10, bit_length // 4))
-    
-    # Score based on step count
-    step_count_score = min(
-        1.0,
-        len(reasoning_steps) / expected_steps if len(reasoning_steps) < expected_steps
-        else expected_steps / len(reasoning_steps)
-    )
-    
-    # Simple progression score
-    progression_score = 0.5
-    if len(reasoning_steps) >= 2:
-        progression_score = 0.8  # Simplified - assume reasonable progression
-    
-    return 0.5 * step_count_score + 0.5 * progression_score
-                """
-            }
+                        """
+                    }
+                }
+            },
+            "calculate_output": "0.6 * correctness + 0.2 * algorithm + 0.15 * reasoning + 0.05 * efficiency"
         }
     
     def train(self, train_file: str, valid_file: str, suffix: str = None,
               hyperparameters: Dict[str, Any] = None) -> str:
         """
-        Train a model using reinforcement fine-tuning.
+        Train a model using reinforcement fine-tuning with o4-mini.
         
         Args:
             train_file: Path to training data file
@@ -519,10 +523,14 @@ def grade_reasoning(reasoning_steps, algorithm, number):
         train_file_id = self.api.upload_file(train_file)
         valid_file_id = self.api.upload_file(valid_file)
         
-        # Set default hyperparameters if not provided
+        # Set default hyperparameters optimized for o4-mini if not provided
         if hyperparameters is None:
             hyperparameters = {
-                "reasoning_effort": "medium"
+                "reasoning_effort": "high",
+                "batch_size": 32,
+                "learning_rate_multiplier": 1.0,
+                "init_value": 0.0,
+                "kl_coef": 0.1
             }
         
         # Create config
@@ -530,10 +538,11 @@ def grade_reasoning(reasoning_steps, algorithm, number):
             model_id=self.base_model,
             training_file_id=train_file_id,
             validation_file_id=valid_file_id,
-            suffix=suffix,
+            suffix=suffix or "factorization-expert",
             grader_config=self.grader_config,
             json_schema=self.json_schema,
-            hyperparameters=hyperparameters
+            hyperparameters=hyperparameters,
+            n_epochs=3  # Setting explicit number of epochs for more reliable training
         )
         
         # Create fine-tuning job
