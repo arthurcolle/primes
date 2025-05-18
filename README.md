@@ -16,7 +16,7 @@ This project provides a mathematical framework and implementation for generating
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/primes.git
+git clone https://github.com/arthurcolle/primes.git
 cd primes
 
 # Install dependencies
